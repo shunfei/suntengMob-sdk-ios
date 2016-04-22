@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0Ja-41-rTd">
+                                <rect key="frame" x="0.0" y="6" width="320" height="180"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="QYG-wa-88I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvv-oJ-MFh">
+                                <rect key="frame" x="0.0" y="195" width="160" height="44"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ZAE-aY-o0Q"/>
+                                </constraints>
+                                <state key="normal" title="Load ad"/>
+                                <connections>
+                                    <action selector="loadAd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="keJ-Tj-Dfr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w96-kL-owS">
+                                <rect key="frame" x="160" y="195" width="160" height="44"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Fua-ZI-kBK"/>
+                                </constraints>
+                                <state key="normal" title="Show interstitial ad"/>
+                                <connections>
+                                    <action selector="showInterstitialAd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="izw-Ip-CJn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hvv-oJ-MFh" firstAttribute="top" secondItem="0Ja-41-rTd" secondAttribute="bottom" constant="4" id="DfZ-rq-5uw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w96-kL-owS" secondAttribute="trailing" id="ELy-W0-5DG"/>
+                            <constraint firstItem="hvv-oJ-MFh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ikh-rk-Yb8"/>
+                            <constraint firstItem="0Ja-41-rTd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MBb-cf-AiA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0Ja-41-rTd" secondAttribute="trailing" id="XUt-iN-qAF"/>
+                            <constraint firstItem="w96-kL-owS" firstAttribute="top" secondItem="0Ja-41-rTd" secondAttribute="bottom" constant="4" id="YDv-oQ-meK"/>
+                            <constraint firstItem="w96-kL-owS" firstAttribute="leading" secondItem="hvv-oJ-MFh" secondAttribute="trailing" constant="4" id="pns-Oz-8o4"/>
+                            <constraint firstItem="0Ja-41-rTd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="6" id="tt5-DA-Dur"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logView" destination="0Ja-41-rTd" id="X1x-sP-IxI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="149" y="319"/>
+        </scene>
+    </scenes>
+</document>
