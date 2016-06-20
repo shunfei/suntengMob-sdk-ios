@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3366FC811D129E1D00AD792C /* STMBannerAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3366FC801D129E1D00AD792C /* STMBannerAdViewController.m */; };
 		C59E8F551CCA165200E4F152 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E8F541CCA165200E4F152 /* main.m */; };
 		C59E8F581CCA165200E4F152 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E8F571CCA165200E4F152 /* AppDelegate.m */; };
-		C59E8F5B1CCA165300E4F152 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E8F5A1CCA165300E4F152 /* ViewController.m */; };
+		C59E8F5B1CCA165300E4F152 /* STMInterstitialAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E8F5A1CCA165300E4F152 /* STMInterstitialAdViewController.m */; };
 		C59E8F5E1CCA165300E4F152 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59E8F5C1CCA165300E4F152 /* Main.storyboard */; };
 		C59E8F601CCA165300E4F152 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C59E8F5F1CCA165300E4F152 /* Assets.xcassets */; };
-		C59E8F631CCA165300E4F152 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59E8F611CCA165300E4F152 /* LaunchScreen.storyboard */; };
-		C59E8F6E1CCA165B00E4F152 /* libSuntengMobileAdsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C59E8F6B1CCA165B00E4F152 /* libSuntengMobileAdsSDK.a */; };
 		C59E8F711CCA1A2300E4F152 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59E8F701CCA1A2300E4F152 /* AdSupport.framework */; };
 		C59E8F731CCA1A2A00E4F152 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59E8F721CCA1A2A00E4F152 /* CoreFoundation.framework */; };
 		C59E8F751CCA1A3000E4F152 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59E8F741CCA1A3000E4F152 /* CoreGraphics.framework */; };
@@ -22,22 +21,31 @@
 		C59E8F7B1CCA1A4900E4F152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59E8F7A1CCA1A4900E4F152 /* Foundation.framework */; };
 		C59E8F7D1CCA1A4F00E4F152 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59E8F7C1CCA1A4F00E4F152 /* SystemConfiguration.framework */; };
 		C59E8F7F1CCA1A5500E4F152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59E8F7E1CCA1A5500E4F152 /* UIKit.framework */; };
+		D86FAF3D1D17E8D7003432D8 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86FAF3C1D17E8D7003432D8 /* StoreKit.framework */; };
+		D86FAF4D1D17EB29003432D8 /* libSuntengMobileAdsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D86FAF481D17EB29003432D8 /* libSuntengMobileAdsSDK.a */; };
+		D86FAF5C1D17F379003432D8 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF531D17F379003432D8 /* LaunchImage.png */; };
+		D86FAF5D1D17F379003432D8 /* LaunchImage4.7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF541D17F379003432D8 /* LaunchImage4.7@2x.png */; };
+		D86FAF5E1D17F379003432D8 /* LaunchImage4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF551D17F379003432D8 /* LaunchImage4@2x.png */; };
+		D86FAF5F1D17F379003432D8 /* LaunchImage5.5@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF561D17F379003432D8 /* LaunchImage5.5@3x.png */; };
+		D86FAF601D17F379003432D8 /* LaunchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF571D17F379003432D8 /* LaunchImage@2x.png */; };
+		D86FAF611D17F379003432D8 /* LaunchImage_Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF581D17F379003432D8 /* LaunchImage_Landscape.png */; };
+		D86FAF621D17F379003432D8 /* LaunchImage_Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF591D17F379003432D8 /* LaunchImage_Landscape@2x.png */; };
+		D86FAF631D17F379003432D8 /* LaunchImage_Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF5A1D17F379003432D8 /* LaunchImage_Portrait.png */; };
+		D86FAF641D17F379003432D8 /* LaunchImage_Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF5B1D17F379003432D8 /* LaunchImage_Portrait@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3366FC7F1D129E1D00AD792C /* STMBannerAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMBannerAdViewController.h; sourceTree = "<group>"; };
+		3366FC801D129E1D00AD792C /* STMBannerAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMBannerAdViewController.m; sourceTree = "<group>"; };
 		C59E8F501CCA165200E4F152 /* STMobSDKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STMobSDKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C59E8F541CCA165200E4F152 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C59E8F561CCA165200E4F152 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C59E8F571CCA165200E4F152 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C59E8F591CCA165300E4F152 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C59E8F5A1CCA165300E4F152 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C59E8F591CCA165300E4F152 /* STMInterstitialAdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMInterstitialAdViewController.h; sourceTree = "<group>"; };
+		C59E8F5A1CCA165300E4F152 /* STMInterstitialAdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMInterstitialAdViewController.m; sourceTree = "<group>"; };
 		C59E8F5D1CCA165300E4F152 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C59E8F5F1CCA165300E4F152 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C59E8F621CCA165300E4F152 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C59E8F641CCA165300E4F152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C59E8F6B1CCA165B00E4F152 /* libSuntengMobileAdsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuntengMobileAdsSDK.a; sourceTree = "<group>"; };
-		C59E8F6C1CCA165B00E4F152 /* STMInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMInterstitialAdController.h; sourceTree = "<group>"; };
-		C59E8F6D1CCA165B00E4F152 /* SuntengMobileAdsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuntengMobileAdsSDK.h; sourceTree = "<group>"; };
 		C59E8F701CCA1A2300E4F152 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		C59E8F721CCA1A2A00E4F152 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		C59E8F741CCA1A3000E4F152 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,6 +54,21 @@
 		C59E8F7A1CCA1A4900E4F152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C59E8F7C1CCA1A4F00E4F152 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C59E8F7E1CCA1A5500E4F152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D86FAF3C1D17E8D7003432D8 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D86FAF481D17EB29003432D8 /* libSuntengMobileAdsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuntengMobileAdsSDK.a; sourceTree = "<group>"; };
+		D86FAF491D17EB29003432D8 /* STMBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMBannerView.h; sourceTree = "<group>"; };
+		D86FAF4A1D17EB29003432D8 /* STMInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMInterstitialAdController.h; sourceTree = "<group>"; };
+		D86FAF4B1D17EB29003432D8 /* STMSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMSplashAd.h; sourceTree = "<group>"; };
+		D86FAF4C1D17EB29003432D8 /* SuntengMobileAdsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuntengMobileAdsSDK.h; sourceTree = "<group>"; };
+		D86FAF531D17F379003432D8 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
+		D86FAF541D17F379003432D8 /* LaunchImage4.7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage4.7@2x.png"; sourceTree = "<group>"; };
+		D86FAF551D17F379003432D8 /* LaunchImage4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage4@2x.png"; sourceTree = "<group>"; };
+		D86FAF561D17F379003432D8 /* LaunchImage5.5@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage5.5@3x.png"; sourceTree = "<group>"; };
+		D86FAF571D17F379003432D8 /* LaunchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage@2x.png"; sourceTree = "<group>"; };
+		D86FAF581D17F379003432D8 /* LaunchImage_Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage_Landscape.png; sourceTree = "<group>"; };
+		D86FAF591D17F379003432D8 /* LaunchImage_Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage_Landscape@2x.png"; sourceTree = "<group>"; };
+		D86FAF5A1D17F379003432D8 /* LaunchImage_Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage_Portrait.png; sourceTree = "<group>"; };
+		D86FAF5B1D17F379003432D8 /* LaunchImage_Portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage_Portrait@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D86FAF4D1D17EB29003432D8 /* libSuntengMobileAdsSDK.a in Frameworks */,
+				D86FAF3D1D17E8D7003432D8 /* StoreKit.framework in Frameworks */,
 				C59E8F7F1CCA1A5500E4F152 /* UIKit.framework in Frameworks */,
 				C59E8F7D1CCA1A4F00E4F152 /* SystemConfiguration.framework in Frameworks */,
 				C59E8F7B1CCA1A4900E4F152 /* Foundation.framework in Frameworks */,
@@ -61,7 +86,6 @@
 				C59E8F751CCA1A3000E4F152 /* CoreGraphics.framework in Frameworks */,
 				C59E8F731CCA1A2A00E4F152 /* CoreFoundation.framework in Frameworks */,
 				C59E8F711CCA1A2300E4F152 /* AdSupport.framework in Frameworks */,
-				C59E8F6E1CCA165B00E4F152 /* libSuntengMobileAdsSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,14 +112,16 @@
 		C59E8F521CCA165200E4F152 /* STMobSDKSample */ = {
 			isa = PBXGroup;
 			children = (
-				C59E8F6A1CCA165B00E4F152 /* STMobSDK */,
+				D86FAF521D17F379003432D8 /* LaunchImages */,
+				D86FAF471D17EB29003432D8 /* STMobSDK */,
 				C59E8F561CCA165200E4F152 /* AppDelegate.h */,
 				C59E8F571CCA165200E4F152 /* AppDelegate.m */,
-				C59E8F591CCA165300E4F152 /* ViewController.h */,
-				C59E8F5A1CCA165300E4F152 /* ViewController.m */,
+				C59E8F591CCA165300E4F152 /* STMInterstitialAdViewController.h */,
+				C59E8F5A1CCA165300E4F152 /* STMInterstitialAdViewController.m */,
+				3366FC7F1D129E1D00AD792C /* STMBannerAdViewController.h */,
+				3366FC801D129E1D00AD792C /* STMBannerAdViewController.m */,
 				C59E8F5C1CCA165300E4F152 /* Main.storyboard */,
 				C59E8F5F1CCA165300E4F152 /* Assets.xcassets */,
-				C59E8F611CCA165300E4F152 /* LaunchScreen.storyboard */,
 				C59E8F641CCA165300E4F152 /* Info.plist */,
 				C59E8F531CCA165200E4F152 /* Supporting Files */,
 			);
@@ -110,29 +136,48 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C59E8F6A1CCA165B00E4F152 /* STMobSDK */ = {
+		C59E8F811CCA1A7900E4F152 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C59E8F6B1CCA165B00E4F152 /* libSuntengMobileAdsSDK.a */,
-				C59E8F6C1CCA165B00E4F152 /* STMInterstitialAdController.h */,
-				C59E8F6D1CCA165B00E4F152 /* SuntengMobileAdsSDK.h */,
+				C59E8F701CCA1A2300E4F152 /* AdSupport.framework */,
+				C59E8F721CCA1A2A00E4F152 /* CoreFoundation.framework */,
+				C59E8F741CCA1A3000E4F152 /* CoreGraphics.framework */,
+				C59E8F761CCA1A3B00E4F152 /* CoreLocation.framework */,
+				C59E8F781CCA1A4100E4F152 /* CoreTelephony.framework */,
+				C59E8F7A1CCA1A4900E4F152 /* Foundation.framework */,
+				D86FAF3C1D17E8D7003432D8 /* StoreKit.framework */,
+				C59E8F7C1CCA1A4F00E4F152 /* SystemConfiguration.framework */,
+				C59E8F7E1CCA1A5500E4F152 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D86FAF471D17EB29003432D8 /* STMobSDK */ = {
+			isa = PBXGroup;
+			children = (
+				D86FAF481D17EB29003432D8 /* libSuntengMobileAdsSDK.a */,
+				D86FAF491D17EB29003432D8 /* STMBannerView.h */,
+				D86FAF4A1D17EB29003432D8 /* STMInterstitialAdController.h */,
+				D86FAF4B1D17EB29003432D8 /* STMSplashAd.h */,
+				D86FAF4C1D17EB29003432D8 /* SuntengMobileAdsSDK.h */,
 			);
 			path = STMobSDK;
 			sourceTree = "<group>";
 		};
-		C59E8F811CCA1A7900E4F152 /* Frameworks */ = {
+		D86FAF521D17F379003432D8 /* LaunchImages */ = {
 			isa = PBXGroup;
 			children = (
-				C59E8F7E1CCA1A5500E4F152 /* UIKit.framework */,
-				C59E8F7C1CCA1A4F00E4F152 /* SystemConfiguration.framework */,
-				C59E8F7A1CCA1A4900E4F152 /* Foundation.framework */,
-				C59E8F781CCA1A4100E4F152 /* CoreTelephony.framework */,
-				C59E8F761CCA1A3B00E4F152 /* CoreLocation.framework */,
-				C59E8F741CCA1A3000E4F152 /* CoreGraphics.framework */,
-				C59E8F721CCA1A2A00E4F152 /* CoreFoundation.framework */,
-				C59E8F701CCA1A2300E4F152 /* AdSupport.framework */,
+				D86FAF531D17F379003432D8 /* LaunchImage.png */,
+				D86FAF541D17F379003432D8 /* LaunchImage4.7@2x.png */,
+				D86FAF551D17F379003432D8 /* LaunchImage4@2x.png */,
+				D86FAF561D17F379003432D8 /* LaunchImage5.5@3x.png */,
+				D86FAF571D17F379003432D8 /* LaunchImage@2x.png */,
+				D86FAF581D17F379003432D8 /* LaunchImage_Landscape.png */,
+				D86FAF591D17F379003432D8 /* LaunchImage_Landscape@2x.png */,
+				D86FAF5A1D17F379003432D8 /* LaunchImage_Portrait.png */,
+				D86FAF5B1D17F379003432D8 /* LaunchImage_Portrait@2x.png */,
 			);
-			name = Frameworks;
+			path = LaunchImages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,9 +237,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C59E8F631CCA165300E4F152 /* LaunchScreen.storyboard in Resources */,
+				D86FAF621D17F379003432D8 /* LaunchImage_Landscape@2x.png in Resources */,
+				D86FAF641D17F379003432D8 /* LaunchImage_Portrait@2x.png in Resources */,
+				D86FAF601D17F379003432D8 /* LaunchImage@2x.png in Resources */,
 				C59E8F601CCA165300E4F152 /* Assets.xcassets in Resources */,
+				D86FAF5E1D17F379003432D8 /* LaunchImage4@2x.png in Resources */,
+				D86FAF5D1D17F379003432D8 /* LaunchImage4.7@2x.png in Resources */,
+				D86FAF611D17F379003432D8 /* LaunchImage_Landscape.png in Resources */,
 				C59E8F5E1CCA165300E4F152 /* Main.storyboard in Resources */,
+				D86FAF631D17F379003432D8 /* LaunchImage_Portrait.png in Resources */,
+				D86FAF5C1D17F379003432D8 /* LaunchImage.png in Resources */,
+				D86FAF5F1D17F379003432D8 /* LaunchImage5.5@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +258,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C59E8F5B1CCA165300E4F152 /* ViewController.m in Sources */,
+				3366FC811D129E1D00AD792C /* STMBannerAdViewController.m in Sources */,
+				C59E8F5B1CCA165300E4F152 /* STMInterstitialAdViewController.m in Sources */,
 				C59E8F581CCA165200E4F152 /* AppDelegate.m in Sources */,
 				C59E8F551CCA165200E4F152 /* main.m in Sources */,
 			);
@@ -220,14 +274,6 @@
 				C59E8F5D1CCA165300E4F152 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C59E8F611CCA165300E4F152 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C59E8F621CCA165300E4F152 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -269,7 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -307,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,16 +365,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = STMobSDKSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/STMobSDKSample/SuntengMobileAdsSDK",
+					"$(PROJECT_DIR)/STMobSDKSample",
 					"$(PROJECT_DIR)/STMobSDKSample/STMobSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sunteng.com.STMobSDKSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunteng.STMobSDKSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -338,16 +387,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				INFOPLIST_FILE = STMobSDKSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/STMobSDKSample/SuntengMobileAdsSDK",
+					"$(PROJECT_DIR)/STMobSDKSample",
 					"$(PROJECT_DIR)/STMobSDKSample/STMobSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sunteng.com.STMobSDKSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunteng.STMobSDKSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -372,6 +424,7 @@
 				C59E8F691CCA165300E4F152 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "SuntengMobileAdsSDK.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <STMSplashAdDelegate>
+
+@property (nonatomic, strong) STMSplashAd *splashAd;
 
 @end
 
@@ -17,29 +20,64 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *vc = [storyboard instantiateInitialViewController];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];
+    
+    // splash SDK
+    self.splashAd = [STMSplashAd splashAdWithPublishedId:@"1"
+                                                   appId:@"2"
+                                             placementId:@"34"];
+    self.splashAd.delegate = self;
+    
+    // 设置一个跟启动屏幕一致的图片作为背景图
+    NSString *launchImageName;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        if ([UIScreen mainScreen].bounds.size.height == 480.0f) {
+            launchImageName = @"LaunchImage";
+        } else if ([UIScreen mainScreen].bounds.size.height == 568.0f) {
+            launchImageName = @"LaunchImage4@2x";
+        } else if ([UIScreen mainScreen].bounds.size.height == 667.0f) {
+            launchImageName = @"LaunchImage4.7@2x";
+        } else if ([UIScreen mainScreen].bounds.size.height == 736.0) {
+            launchImageName = @"LaunchImage5.5@3x";
+        }
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        if ([UIScreen mainScreen].bounds.size.height == 768.0f) {
+            launchImageName = @"LaunchImage_Landscape";
+        } else if ([UIScreen mainScreen].bounds.size.height == 1024.0f) {
+            launchImageName = @"LaunchImage_Portrait";
+        }
+    }
+    UIColor *backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:launchImageName]];
+    
+    [self.splashAd presentInWindow:self.window backgroundColor:backgroundColor];
+    
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+#pragma mark - delegate
+
+// 当开屏广告被成功展示后，回调该方法
+- (void)splashDidPresent:(STMSplashAd *)splash {
+    NSLog(@"%s", __func__);
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+// 当开屏广告展示失败后，回调该方法
+- (void)splashlFailPresent:(STMSplashAd *)splash {
+    NSLog(@"%s", __func__);
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+// 当用户点击广告，回调该方法
+- (void)splashDidTap:(STMSplashAd *)splash {
+    NSLog(@"%s", __func__);
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+// 当开屏广告被关闭后，回调该方法
+- (void)splashDidDismiss:(STMSplashAd *)splash {
+    NSLog(@"%s", __func__);
 }
 
 @end

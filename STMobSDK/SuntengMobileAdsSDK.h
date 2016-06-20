@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "STMSplashAd.h"
+#import "STMBannerView.h"
 #import "STMInterstitialAdController.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -24,6 +26,9 @@ extern NSString * const STMAdsSDKVersion;
  *  @return The sunteng mobile ads SDK singleton object.
  */
 + (instancetype)sharedInstance;
+
+- (instancetype)init __attribute__((unavailable("can not use `- init` method, please use `+ sharedInstance` method")));
++ (instancetype)new __attribute__((unavailable("can not use `+ new` method, please use `+ sharedInstance` method")));
 
 @end
 
