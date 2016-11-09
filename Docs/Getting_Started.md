@@ -1,4 +1,4 @@
-# 舜飞移动广告 SDK iOS 版 v1.x.x 开发文档
+# 舜飞移动广告 SDK iOS 版 v2.x.x 开发文档
 
 ## 1、开发环境
 
@@ -9,13 +9,12 @@
 
 ## 2、SDK 集成
 
-2.1、将最新的 SDK 文件夹，包含头文件 `SuntengMobileAdsSDK.h` 、 `STMBannerView.h` 、 `STMInterstitialAdController.h` 、 `STMSplashAd.h` 和静态库 `libSuntengMobileAdsSDK.a` 加入项目中。
+2.1、将最新的 SDK 文件夹，包含头文件 `SuntengMobileAdsSDK.h` 、 `STMConstants.h` 、 `STMBannerView.h` 、 `STMInterstitialAdController.h` 、 `STMSplashAd.h` 和静态库 `libSuntengMobileAdsSDK.a` 加入项目中。
 
 2.2、添加需要的 Framework：
 
 ```objc
 AdSupport.framework
-CoreFoundation.framework
 CoreGraphics.framework
 CoreLocation.framework
 CoreTelephony.framework
@@ -31,8 +30,11 @@ UIKit.framework
 
 在 info.plist 里加入对应的定位请求字段，值可以为空或者填写获取定位请求提示框要显示的内容。
 
-```objc
-NSLocationWhenInUseUsageDescription   // 允许在前台获取GPS的描述
+```XML
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>iOS 8 定位权限请求提示语！</string>
+<key>NSLocationUsageDescription</key>
+<string>iOS 10 定位权限请求提示语！</string>
 ```
 
 **说明：由于部分广告会定向投递到某些城市，SDK 需要获取地理位置以支持广告的定向投放。**
@@ -72,14 +74,13 @@ NSLocationWhenInUseUsageDescription   // 允许在前台获取GPS的描述
 #### 3.1.1、初始化横幅 SDK
 
 ```objc
-self.bannerView = [[STMBannerView alloc] initWithPublishedId:@"1"
-                                                       appId:@"2"
-                                                 placementId:@"4"
-                                                       frame:CGRectMake(0, 0, 320, 50)];
+self.bannerView = [[STMBannerView alloc] initWithPublisherID:@"2"
+                                                           appID:@"36"
+                                                     placementID:@"35"
+                                                           appKey:@"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"
+                                                           frame:CGRectMake(0, 64, 320, 50)];
 [self.bannerView loadAd];
 ```
-
-**建议使用 Banner 尺寸 320x50、640x100、1080x120，单位为像素。**
 
 #### 3.1.2、展示横幅广告
 
@@ -130,9 +131,10 @@ if (self.bannerView.isLoaded) {
 #### 3.2.1、初始化插屏 SDK
 
 ```objc
-self.interstitialAdController = [STMInterstitialAdController interstitialAdControllerWithPublishedId:@"1"
-                                                                                               appId:@"2"
-                                                                                         placementId:@"3"];
+self.interstitialAdController = [STMInterstitialAdController interstitialAdControllerWithPublisherID:@"2"
+                                                                                                   appID:@"36"
+                                                                                             placementID:@"36"
+                                                                                                  appKey:@"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"];
 ```
 
 #### 3.2.2、展示插屏广告
@@ -190,9 +192,11 @@ if (self.interstitialAdController.isLoaded) {
     [self.window makeKeyAndVisible];
     
     // 初始化开屏 SDK
-    self.splashAd = [STMSplashAd splashAdWithPublishedId:@"1"
-                                                   appId:@"2"
-                                             placementId:@"5"];
+    self.splashAd = [STMSplashAd splashAdWithPublisherID:@"2"
+                                                   appID:@"36"
+                                             placementID:@"34"
+                                                  appKey:@"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"];
+    
     self.splashAd.delegate = self;
     
     // 展示开屏广告
@@ -212,7 +216,7 @@ if (self.interstitialAdController.isLoaded) {
 - (void)splashDidPresent:(STMSplashAd *)splash;
 
 // 当开屏广告展示失败后，回调该方法
-- (void)splashlFailPresent:(STMSplashAd *)splash;
+- (void)splashFailPresent:(STMSplashAd *)splash;
 
 // 当用户点击广告，回调该方法
 - (void)splashDidTap:(STMSplashAd *)splash;
@@ -223,8 +227,10 @@ if (self.interstitialAdController.isLoaded) {
 
 #### 3.3.2、设置实时开屏广告请求超时时间
 
-当本地没有缓存的开屏广告或者本地已缓存广告超时， SDK 会发起实时开屏广告请求，实时开屏广告超时时间默认设定为 2 秒，以提高用户体验。您可以通过以下方法自定义超时时间，以提高实时开屏广告展示的成功几率。**强烈建议您保持该设置以提高用户体验！**
+开屏广告混合了缓存的开屏广告和实时获取功能。当本地没有缓存的开屏广告或者本地已缓存广告超时时， SDK 会发起实时开屏广告请求，实时开屏广告超时时间内默认设定为 2 秒，以提高用户体验。您可以通过以下方法自定义超时时间，以提高实时开屏广告展示的成功几率。
 
 ```objc
 - (void)setRealtimeSplashTimeoutInterval:(CGFloat)interval;
 ```
+
+

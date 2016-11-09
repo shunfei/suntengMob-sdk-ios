@@ -20,6 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    application.statusBarHidden = YES;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *vc = [storyboard instantiateInitialViewController];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -27,9 +28,10 @@
     [self.window makeKeyAndVisible];
     
     // splash SDK
-    self.splashAd = [STMSplashAd splashAdWithPublishedId:@"1"
-                                                   appId:@"2"
-                                             placementId:@"34"];
+    self.splashAd = [STMSplashAd splashAdWithPublisherID:PUBLISHERID
+                                                   appID:APPID
+                                             placementID:@"34"
+                                                  appKey:APPKEY];
     self.splashAd.delegate = self;
     
     // 设置一个跟启动屏幕一致的图片作为背景图
@@ -52,7 +54,6 @@
         }
     }
     UIColor *backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:launchImageName]];
-    
     [self.splashAd presentInWindow:self.window backgroundColor:backgroundColor];
     
     return YES;
@@ -78,6 +79,7 @@
 // 当开屏广告被关闭后，回调该方法
 - (void)splashDidDismiss:(STMSplashAd *)splash {
     NSLog(@"%s", __func__);
+    [UIApplication sharedApplication].statusBarHidden = NO;
 }
 
 @end

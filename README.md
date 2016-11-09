@@ -8,6 +8,11 @@
 
 ## Change Log
 
+11/09/2016 - v2.0.3
+
+* Update API.
+* bugs fixes.
+
 06/20/2016 - v1.1.0
 
 * add splash and banner ad.

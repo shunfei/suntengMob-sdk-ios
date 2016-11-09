@@ -1,0 +1,20 @@
+//
+//  PrefixHeader.pch
+//  STMobSDKSample
+//
+//  Created by samingzhong on 2016/11/8.
+//  Copyright © 2016年 sunteng. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//appID、publisherID、placementID、appKey setting
+#define PUBLISHERID  @"2"
+#define APPID  @"36"
+#define APPKEY  @"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"
+
+#endif /* PrefixHeader_pch */

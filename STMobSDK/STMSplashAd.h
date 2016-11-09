@@ -6,8 +6,9 @@
 //  Copyright © 2016年 Sunteng Information Technology Co., Ltd. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "STMConstants.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,23 +23,40 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Create and return a `STMSplashAd` instance.
  *
- *  @param publishedId The published id.
- *  @param appId       The app id.
- *  @param placementId The placement id.
+ *  @param publisherID The publisher ID.
+ *  @param appID       The app ID.
+ *  @param placementID The placement ID.
+ *  @param appKey      The app key.
  *
  *  @return A `STMSplashAd` instance.
  */
-+ (nullable instancetype)splashAdWithPublishedId:(NSString *)publishedId
-                                           appId:(NSString *)appId
-                                     placementId:(NSString *)placementId;
++ (nullable instancetype)splashAdWithPublisherID:(NSString *)publisherID
+                                           appID:(NSString *)appID
+                                     placementID:(NSString *)placementID
+                                          appKey:(NSString *)appKey;
 
-- (instancetype)init __attribute__((unavailable("can not use `- init` method, please use `+ initWithPublishedId:appId:placementId:` method")));
-+ (instancetype)new __attribute__((unavailable("can not use `+ new` method, please use `+ initWithPublishedId:appId:placementId:` method")));
+- (instancetype)init __attribute__((unavailable("can not use `- init` method, please use `+ initWithPublisherID:appID:placementID:appKey:` method")));
++ (instancetype)new __attribute__((unavailable("can not use `+ new` method, please use `+ initWithPublisherID:appID:placementID:appKey:` method")));
 
 /**
- *  The placement Id
+ *  The publisher ID
  */
-@property (nonatomic, copy, readonly) NSString *adUnitID;
+@property (nonatomic, copy, readonly) NSString *publisherID;
+
+/**
+ *  The app ID
+ */
+@property (nonatomic, copy, readonly) NSString *appID;
+
+/**
+ *  The placement ID
+ */
+@property (nonatomic, copy, readonly) NSString *placementID;
+
+/**
+ *  The appKey
+ */
+@property (nonatomic, copy, readonly) NSString *appKey;
 
 /**
  *  The `STMSplashAd` delegate.
@@ -87,7 +105,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param splash The `STMSplashAd` instance.
  */
-- (void)splashlFailPresent:(STMSplashAd *)splash;
+- (void)splash:(STMSplashAd *)splash failPresentWithError:(NSError *)error;
 
 /**
  *  The splash ad tapped.

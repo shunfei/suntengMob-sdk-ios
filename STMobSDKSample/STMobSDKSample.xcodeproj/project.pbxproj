@@ -21,8 +21,8 @@
 		C59E8F7B1CCA1A4900E4F152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59E8F7A1CCA1A4900E4F152 /* Foundation.framework */; };
 		C59E8F7D1CCA1A4F00E4F152 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59E8F7C1CCA1A4F00E4F152 /* SystemConfiguration.framework */; };
 		C59E8F7F1CCA1A5500E4F152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59E8F7E1CCA1A5500E4F152 /* UIKit.framework */; };
+		D805BC491DD2CD8000FD5DEE /* libSuntengMobileAdsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D805BC431DD2CD8000FD5DEE /* libSuntengMobileAdsSDK.a */; };
 		D86FAF3D1D17E8D7003432D8 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86FAF3C1D17E8D7003432D8 /* StoreKit.framework */; };
-		D86FAF4D1D17EB29003432D8 /* libSuntengMobileAdsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D86FAF481D17EB29003432D8 /* libSuntengMobileAdsSDK.a */; };
 		D86FAF5C1D17F379003432D8 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF531D17F379003432D8 /* LaunchImage.png */; };
 		D86FAF5D1D17F379003432D8 /* LaunchImage4.7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF541D17F379003432D8 /* LaunchImage4.7@2x.png */; };
 		D86FAF5E1D17F379003432D8 /* LaunchImage4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF551D17F379003432D8 /* LaunchImage4@2x.png */; };
@@ -37,6 +37,7 @@
 /* Begin PBXFileReference section */
 		3366FC7F1D129E1D00AD792C /* STMBannerAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMBannerAdViewController.h; sourceTree = "<group>"; };
 		3366FC801D129E1D00AD792C /* STMBannerAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMBannerAdViewController.m; sourceTree = "<group>"; };
+		33D098721DD1D885005D78AA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		C59E8F501CCA165200E4F152 /* STMobSDKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STMobSDKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C59E8F541CCA165200E4F152 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C59E8F561CCA165200E4F152 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,12 +55,13 @@
 		C59E8F7A1CCA1A4900E4F152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C59E8F7C1CCA1A4F00E4F152 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C59E8F7E1CCA1A5500E4F152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D805BC431DD2CD8000FD5DEE /* libSuntengMobileAdsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuntengMobileAdsSDK.a; sourceTree = "<group>"; };
+		D805BC441DD2CD8000FD5DEE /* STMBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMBannerView.h; sourceTree = "<group>"; };
+		D805BC451DD2CD8000FD5DEE /* STMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMConstants.h; sourceTree = "<group>"; };
+		D805BC461DD2CD8000FD5DEE /* STMInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMInterstitialAdController.h; sourceTree = "<group>"; };
+		D805BC471DD2CD8000FD5DEE /* STMSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMSplashAd.h; sourceTree = "<group>"; };
+		D805BC481DD2CD8000FD5DEE /* SuntengMobileAdsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuntengMobileAdsSDK.h; sourceTree = "<group>"; };
 		D86FAF3C1D17E8D7003432D8 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		D86FAF481D17EB29003432D8 /* libSuntengMobileAdsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuntengMobileAdsSDK.a; sourceTree = "<group>"; };
-		D86FAF491D17EB29003432D8 /* STMBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMBannerView.h; sourceTree = "<group>"; };
-		D86FAF4A1D17EB29003432D8 /* STMInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMInterstitialAdController.h; sourceTree = "<group>"; };
-		D86FAF4B1D17EB29003432D8 /* STMSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMSplashAd.h; sourceTree = "<group>"; };
-		D86FAF4C1D17EB29003432D8 /* SuntengMobileAdsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuntengMobileAdsSDK.h; sourceTree = "<group>"; };
 		D86FAF531D17F379003432D8 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		D86FAF541D17F379003432D8 /* LaunchImage4.7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage4.7@2x.png"; sourceTree = "<group>"; };
 		D86FAF551D17F379003432D8 /* LaunchImage4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage4@2x.png"; sourceTree = "<group>"; };
@@ -76,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D86FAF4D1D17EB29003432D8 /* libSuntengMobileAdsSDK.a in Frameworks */,
+				D805BC491DD2CD8000FD5DEE /* libSuntengMobileAdsSDK.a in Frameworks */,
 				D86FAF3D1D17E8D7003432D8 /* StoreKit.framework in Frameworks */,
 				C59E8F7F1CCA1A5500E4F152 /* UIKit.framework in Frameworks */,
 				C59E8F7D1CCA1A4F00E4F152 /* SystemConfiguration.framework in Frameworks */,
@@ -112,8 +114,8 @@
 		C59E8F521CCA165200E4F152 /* STMobSDKSample */ = {
 			isa = PBXGroup;
 			children = (
+				D805BC421DD2CD8000FD5DEE /* STMobSDK */,
 				D86FAF521D17F379003432D8 /* LaunchImages */,
-				D86FAF471D17EB29003432D8 /* STMobSDK */,
 				C59E8F561CCA165200E4F152 /* AppDelegate.h */,
 				C59E8F571CCA165200E4F152 /* AppDelegate.m */,
 				C59E8F591CCA165300E4F152 /* STMInterstitialAdViewController.h */,
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				C59E8F541CCA165200E4F152 /* main.m */,
+				33D098721DD1D885005D78AA /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,16 +155,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D86FAF471D17EB29003432D8 /* STMobSDK */ = {
+		D805BC421DD2CD8000FD5DEE /* STMobSDK */ = {
 			isa = PBXGroup;
 			children = (
-				D86FAF481D17EB29003432D8 /* libSuntengMobileAdsSDK.a */,
-				D86FAF491D17EB29003432D8 /* STMBannerView.h */,
-				D86FAF4A1D17EB29003432D8 /* STMInterstitialAdController.h */,
-				D86FAF4B1D17EB29003432D8 /* STMSplashAd.h */,
-				D86FAF4C1D17EB29003432D8 /* SuntengMobileAdsSDK.h */,
+				D805BC431DD2CD8000FD5DEE /* libSuntengMobileAdsSDK.a */,
+				D805BC441DD2CD8000FD5DEE /* STMBannerView.h */,
+				D805BC451DD2CD8000FD5DEE /* STMConstants.h */,
+				D805BC461DD2CD8000FD5DEE /* STMInterstitialAdController.h */,
+				D805BC471DD2CD8000FD5DEE /* STMSplashAd.h */,
+				D805BC481DD2CD8000FD5DEE /* SuntengMobileAdsSDK.h */,
 			);
-			path = STMobSDK;
+			name = STMobSDK;
+			path = ../../STMobSDK;
 			sourceTree = "<group>";
 		};
 		D86FAF521D17F379003432D8 /* LaunchImages */ = {
@@ -211,6 +216,7 @@
 				TargetAttributes = {
 					C59E8F4F1CCA165200E4F152 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = Q4J4V8H839;
 					};
 				};
 			};
@@ -305,6 +311,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/STMobSDKSample/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -347,6 +355,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/STMobSDKSample/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -367,14 +377,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Q4J4V8H839;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/STMobSDKSample/PrefixHeader.pch";
 				INFOPLIST_FILE = STMobSDKSample/Info.plist;
+				INFOPLIST_PREFIX_HEADER = "";
+				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/STMobSDKSample/SuntengMobileAdsSDK",
-					"$(PROJECT_DIR)/STMobSDKSample",
-					"$(PROJECT_DIR)/STMobSDKSample/STMobSDK",
+					"$(PROJECT_DIR)/../STMobSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunteng.STMobSDKSample;
@@ -389,14 +402,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				DEVELOPMENT_TEAM = Q4J4V8H839;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/STMobSDKSample/PrefixHeader.pch";
 				INFOPLIST_FILE = STMobSDKSample/Info.plist;
+				INFOPLIST_PREFIX_HEADER = "";
+				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/STMobSDKSample/SuntengMobileAdsSDK",
-					"$(PROJECT_DIR)/STMobSDKSample",
-					"$(PROJECT_DIR)/STMobSDKSample/STMobSDK",
+					"$(PROJECT_DIR)/../STMobSDK",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunteng.STMobSDKSample;

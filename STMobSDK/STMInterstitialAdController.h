@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "STMConstants.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,23 +22,41 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Create and return a `STMInterstitialAdController` instance.
  *
- *  @param publishedId The published id.
- *  @param appId       The app id.
- *  @param placementId The placement id.
+ *  @param publisherID The publisher ID.
+ *  @param appID       The app ID.
+ *  @param placementID The placement ID.
+ *  @param appKey      The app key.
  *
  *  @return A `STMInterstitialAdController` instance.
  */
-+ (nullable instancetype)interstitialAdControllerWithPublishedId:(NSString *)publishedId
-                                                           appId:(NSString *)appId
-                                                     placementId:(NSString *)placementId;
++ (nullable instancetype)interstitialAdControllerWithPublisherID:(NSString *)publisherID
+                                                           appID:(NSString *)appID
+                                                     placementID:(NSString *)placementID
+                                                          appKey:(NSString *)appKey;
 
-- (instancetype)init __attribute__((unavailable("can not use `- init` method, please use `+ interstitialAdControllerWithPublishedId:appId:placementId:` method")));
-+ (instancetype)new __attribute__((unavailable("can not use `+ new` method, please use `+ interstitialAdControllerWithPublishedId:appId:placementId:` method")));
+- (instancetype)init __attribute__((unavailable("can not use `- init` method, please use `+ interstitialAdControllerWithPublisherID:appID:placementID:appKey:` method")));
++ (instancetype)new __attribute__((unavailable("can not use `+ new` method, please use `+ interstitialAdControllerWithPublisherID:appID:placementID:appKey:` method")));
 
 /**
- *  The placement Id.
+ *  The publisher ID.
  */
-@property (nonatomic, copy, readonly) NSString *adUnitID;
+@property (nonatomic, copy, readonly) NSString *publisherID;
+
+/**
+ *  The app ID.
+ */
+@property (nonatomic, copy, readonly) NSString *appID;
+
+/**
+ *  The placement ID.
+ */
+@property (nonatomic, copy, readonly) NSString *placementID;
+
+/**
+ *  The appKey.
+ */
+@property (nonatomic, copy, readonly) NSString *appKey;
+
 
 /**
  *  The `STMInterstitialAdController` delegate.
@@ -83,7 +102,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param interstitial The `STMInterstitialAdController` instance.
  */
-- (void)interstitialDidLoadFail:(STMInterstitialAdController *)interstitial;
+- (void)interstitial:(STMInterstitialAdController *)interstitial didLoadFailWithError:(NSError *)error;
 
 /**
  *  The interstitial ad presented.

@@ -13,11 +13,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- *  Sunteng mobile ad SDK version.
- */
-extern NSString * const STMAdsSDKVersion;
-
 @interface SuntengMobileAdsSDK : NSObject
 
 /**
@@ -26,6 +21,11 @@ extern NSString * const STMAdsSDKVersion;
  *  @return The sunteng mobile ads SDK singleton object.
  */
 + (instancetype)sharedInstance;
+
+/**
+ *  Sunteng mobile ad SDK version.
+ */
+@property (nonatomic, strong, readonly) NSString *version;
 
 - (instancetype)init __attribute__((unavailable("can not use `- init` method, please use `+ sharedInstance` method")));
 + (instancetype)new __attribute__((unavailable("can not use `+ new` method, please use `+ sharedInstance` method")));

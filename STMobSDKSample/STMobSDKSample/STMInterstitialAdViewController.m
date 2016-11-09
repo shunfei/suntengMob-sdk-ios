@@ -41,9 +41,10 @@
     self.isLoading = YES;
     
     if (!self.interstitialAdController) {
-        self.interstitialAdController = [STMInterstitialAdController interstitialAdControllerWithPublishedId:@"2"
-                                                                                                       appId:@"23"
-                                                                                                 placementId:@"36"];
+        self.interstitialAdController = [STMInterstitialAdController interstitialAdControllerWithPublisherID:PUBLISHERID
+                                                                                                       appID:APPID
+                                                                                                 placementID:@"36"
+                                                                                                      appKey:APPKEY];
         self.interstitialAdController.delegate = self;
     }
     
