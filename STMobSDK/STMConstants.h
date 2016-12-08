@@ -23,5 +23,6 @@ typedef NS_ENUM(NSInteger, STMErrorCode) {
     STMErrorCodeRefund,                 // no ad - refund
     STMErrorCodeBlank,                  // no ad - keep blank
     STMErrorCodeTimeout,                // timeout
+    STMErrorCodeLoadResourceFail,       // load resource fail
     STMErrorCodeOther = -1              // other error
 };

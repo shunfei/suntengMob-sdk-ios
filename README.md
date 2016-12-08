@@ -1,6 +1,6 @@
 # suntengMob-sdk-ios for iOS
 
-移动广告 SDK
+舜飞移动广告 SDK
 
 ## 如何使用
 
@@ -8,16 +8,21 @@
 
 ## Change Log
 
+12/08/2016 - v2.0.4
+
+* Support ATS.
+* Add native ad.
+
 11/09/2016 - v2.0.3
 
 * Update API.
-* bugs fixes.
+* Bugs fixes.
 
 06/20/2016 - v1.1.0
 
-* add splash and banner ad.
-* bugs fixes.
+* Add splash and banner ad.
+* Bugs fixes.
 
 04/22/2016 - v1.0.0
 
-* initial release
+* Initial release.

@@ -10,6 +10,7 @@
 #import "STMSplashAd.h"
 #import "STMBannerView.h"
 #import "STMInterstitialAdController.h"
+#import "STMNativeAd.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

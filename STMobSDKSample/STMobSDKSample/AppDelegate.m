@@ -59,7 +59,7 @@
     return YES;
 }
 
-#pragma mark - delegate
+#pragma mark - STMSplashAdDelegate
 
 // 当开屏广告被成功展示后，回调该方法
 - (void)splashDidPresent:(STMSplashAd *)splash {

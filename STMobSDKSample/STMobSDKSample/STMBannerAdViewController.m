@@ -32,7 +32,7 @@
     [self.bannerAdView loadAd];
 }
 
-#pragma mark - delegate
+#pragma mark - STMBannerViewDelegate
 
 // 当横幅广告被成功加载后，回调该方法
 - (void)bannerViewDidLoadAd:(STMBannerView *)bannerView {
