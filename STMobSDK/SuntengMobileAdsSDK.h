@@ -24,6 +24,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedInstance;
 
 /**
+ *  Register SDK.
+ *
+ *  @param appSecret The app secret.
+ */
+- (void)registerSDKWithAppSecret:(NSString *)appSecret;
+
+/**
  *  Sunteng mobile ad SDK version.
  */
 @property (nonatomic, strong, readonly) NSString *version;

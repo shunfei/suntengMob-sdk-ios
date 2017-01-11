@@ -1,11 +1,11 @@
-# 舜飞移动广告 SDK iOS 版 v2.0.4 开发文档
+# 舜飞移动广告 SDK iOS 版 v2.0.5 开发文档
 
 ## 1、开发环境
 
 * Xcode 7.0 或更高版本
 * 支持 iOS 6.0.0 或更高版本
 
-关于 **PublisherID**、**AppID**、**PlacementID**、**AppKey**。请从 [官网](http://mbv.biddingx.com/main/) 获取 PublisherID、AppID、PlacementID、AppKey。
+关于 **AdUnitID**、**AppSecret**。请从 [官网](http://mbv.biddingx.com/main/) 获取 AdUnitID、AppSecret。
 
 ## 2、SDK 集成
 
@@ -60,16 +60,22 @@ UIKit.framework
 #import "SuntengMobileAdsSDK.h"
 ```
 
+初始化 SDK
+
+```objc
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[SuntengMobileAdsSDK sharedInstance] registerSDKWithAppSecret:@"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"];
+    return YES;
+}
+```
+
 ### 3.1、横幅广告
 
 #### 3.1.1、创建横幅广告
 
 ```objc
-self.bannerView = [[STMBannerView alloc] initWithPublisherID:@"2"
-                                                           appID:@"36"
-                                                     placementID:@"35"
-                                                           appKey:@"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"
-                                                           frame:CGRectMake(0, 64, 320, 50)];
+self.bannerView = [[STMBannerView alloc] initWithAdUnitID:@"2-36-35"
+                                                    frame:CGRectMake(0, 64, 320, 50)];
 [self.bannerView loadAd];
 ```
 
@@ -116,10 +122,7 @@ if (self.bannerView.isLoaded) {
 #### 3.2.1、创建插屏广告
 
 ```objc
-self.interstitialAdController = [STMInterstitialAdController interstitialAdControllerWithPublisherID:@"2"
-                                                                                                   appID:@"36"
-                                                                                             placementID:@"36"
-                                                                                                  appKey:@"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"];
+self.interstitialAdController = [STMInterstitialAdController interstitialAdControllerWithAdUnitID:@"2-36-36"];
 ```
 
 #### 3.2.2、展示插屏广告
@@ -159,6 +162,9 @@ if (self.interstitialAdController.isLoaded) {
 
 ```objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // 初始化 SDK
+    [[SuntengMobileAdsSDK sharedInstance] registerSDKWithAppSecret:@"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"];
+    
     // 从 MainStoryboard 加载 rootViewController
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *vc = [storyboard instantiateInitialViewController];
@@ -169,10 +175,7 @@ if (self.interstitialAdController.isLoaded) {
     [self.window makeKeyAndVisible];
     
     // 初始化开屏广告
-    self.splashAd = [STMSplashAd splashAdWithPublisherID:@"2"
-                                                   appID:@"36"
-                                             placementID:@"34"
-                                                  appKey:@"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"];
+    self.splashAd = [STMSplashAd splashAdWithAdUnitID:@"2-36-34"];
     
     self.splashAd.delegate = self;
     
@@ -215,10 +218,7 @@ if (self.interstitialAdController.isLoaded) {
 #### 3.4.1、创建原生广告
 
 ```objc
-self.nativeAd = [[STMNativeAd alloc] initWithPublisherID:@"2"
-                                                   appID:@"36"
-                                             placementID:@"53"
-                                                  appKey:@"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"];
+self.nativeAd = [[STMNativeAd alloc] initWithAdUnitID:@"2-36-53"];
 [self.nativeAd loadAd];
 ```
 

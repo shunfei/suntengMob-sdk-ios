@@ -8,6 +8,10 @@
 
 ## Change Log
 
+01/11/2017 - v2.0.5
+
+* Update API.
+
 12/08/2016 - v2.0.4
 
 * Support ATS.

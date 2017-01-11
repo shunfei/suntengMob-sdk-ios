@@ -21,11 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.bannerAdView = [[STMBannerView alloc] initWithPublisherID:PUBLISHERID
-                                                             appID:APPID
-                                                       placementID:@"35"
-                                                            appKey:APPKEY
-                                                             frame:self.adViewContainer.bounds];
+    self.bannerAdView = [[STMBannerView alloc] initWithAdUnitID:@"2-36-35"
+                                                          frame:self.adViewContainer.bounds];
     
     self.bannerAdView.delegate = self;
     [self.adViewContainer addSubview:self.bannerAdView];

@@ -24,41 +24,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- Create and return a `STMNativeAd` instance.
-
- @param publisherID The publisher ID.
- @param appID The app ID.
- @param placementID The placement ID.
- @param appKey The app key.
- @return A `STMNativeAd` instance.
+ *  Create and return a `STMNativeAd` instance.
+ *
+ *  @param adUnitID The ad unit ID.
+ *  @return A `STMNativeAd` instance.
  */
-- (nullable instancetype)initWithPublisherID:(NSString *)publisherID
-                                       appID:(NSString *)appID
-                                 placementID:(NSString *)placementID
-                                      appKey:(NSString *)appKey;
+- (nullable instancetype)initWithAdUnitID:(NSString *)adUnitID;
 
 - (instancetype)init __attribute__((unavailable("can not use `- init` method, please use `+ nativeAdWithPublisherID:appID:placementID:appKey:` method")));
 + (instancetype)new __attribute__((unavailable("can not use `+ new` method, please use `+ nativeAdWithPublisherID:appID:placementID:appKey:` method")));
 
 /**
- *  The publisher ID.
+ *  The ad unit ID.
  */
-@property (nonatomic, strong, readonly) NSString *publisherID;
-
-/**
- *  The app ID.
- */
-@property (nonatomic, strong, readonly) NSString *appID;
-
-/**
- *  The placement ID.
- */
-@property (nonatomic, strong, readonly) NSString *placementID;
-
-/**
- *  The appKey.
- */
-@property (nonatomic, strong, readonly) NSString *appKey;
+@property (nonatomic, strong, readonly) NSString *adUnitID;
 
 /**
  *  The `STMNativeAd` delegate.

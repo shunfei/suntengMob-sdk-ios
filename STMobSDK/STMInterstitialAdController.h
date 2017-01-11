@@ -22,41 +22,19 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Create and return a `STMInterstitialAdController` instance.
  *
- *  @param publisherID The publisher ID.
- *  @param appID       The app ID.
- *  @param placementID The placement ID.
- *  @param appKey      The app key.
+ *  @param adUnitID    The ad unit ID.
  *
  *  @return A `STMInterstitialAdController` instance.
  */
-+ (nullable instancetype)interstitialAdControllerWithPublisherID:(NSString *)publisherID
-                                                           appID:(NSString *)appID
-                                                     placementID:(NSString *)placementID
-                                                          appKey:(NSString *)appKey;
++ (nullable instancetype)interstitialAdControllerWithAdUnitID:(NSString *)adUnitID;
 
 - (instancetype)init __attribute__((unavailable("can not use `- init` method, please use `+ interstitialAdControllerWithPublisherID:appID:placementID:appKey:` method")));
 + (instancetype)new __attribute__((unavailable("can not use `+ new` method, please use `+ interstitialAdControllerWithPublisherID:appID:placementID:appKey:` method")));
 
 /**
- *  The publisher ID.
+ *  The ad unit ID.
  */
-@property (nonatomic, copy, readonly) NSString *publisherID;
-
-/**
- *  The app ID.
- */
-@property (nonatomic, copy, readonly) NSString *appID;
-
-/**
- *  The placement ID.
- */
-@property (nonatomic, copy, readonly) NSString *placementID;
-
-/**
- *  The appKey.
- */
-@property (nonatomic, copy, readonly) NSString *appKey;
-
+@property (nonatomic, copy, readonly) NSString *adUnitID;
 
 /**
  *  The `STMInterstitialAdController` delegate.

@@ -30,10 +30,7 @@
 }
 
 - (IBAction)fetchAd:(id)sender {
-    self.topPlaceNativeAd = [[STMNativeAd alloc] initWithPublisherID:PUBLISHERID
-                                                               appID:APPID
-                                                         placementID:@"53"
-                                                              appKey:APPKEY];
+    self.topPlaceNativeAd = [[STMNativeAd alloc] initWithAdUnitID:@"2-36-53"];
     self.topPlaceNativeAd.delegate = self;
     [self.topPlaceNativeAd loadAd];
 }

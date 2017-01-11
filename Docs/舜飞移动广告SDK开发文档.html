@@ -468,7 +468,7 @@ pre[class*="language-"] {
 
 <body>
 
-<h1 id="toc_0">舜飞移动广告 SDK iOS 版 v2.x.x 开发文档</h1>
+<h1 id="toc_0">舜飞移动广告 SDK iOS 版 v2.0.5 开发文档</h1>
 
 <h2 id="toc_1">1、开发环境</h2>
 
@@ -477,13 +477,24 @@ pre[class*="language-"] {
 <li>支持 iOS 6.0.0 或更高版本</li>
 </ul>
 
-<p>关于 <strong>PublisherID</strong> 、 <strong>PlacementID</strong> 、 <strong>AppID</strong> 。请从 <a href="http://mbv.biddingx.com/main/">官网</a> 获取 PublisherID、PlacementID、AppID。</p>
+<p>关于 <strong>AdUnitID</strong>、<strong>AppSecret</strong>。请从 <a href="http://mbv.biddingx.com/main/">官网</a> 获取 AdUnitID、AppSecret。</p>
 
 <h2 id="toc_2">2、SDK 集成</h2>
 
-<p>2.1、将最新的 SDK 文件夹，包含头文件 <code>SuntengMobileAdsSDK.h</code> 、 <code>STMConstants.h</code> 、 <code>STMBannerView.h</code> 、 <code>STMInterstitialAdController.h</code> 、 <code>STMSplashAd.h</code> 和静态库 <code>libSuntengMobileAdsSDK.a</code> 加入项目中。</p>
+<h4 id="toc_3">2.1、将最新的 SDK 文件夹加入项目中，包含以下头文件和静态库文件：</h4>
 
-<p>2.2、添加需要的 Framework：</p>
+<div><pre><code class="language-objectivec">-📂 SuntengMobileAdsSDK
+ |-📄 SuntengMobileAdsSDK.h
+ |-📄 STMConstants.h
+ |-📄 STMBannerView.h
+ |-📄 STMInterstitialAdController.h
+ |-📄 STMSplashAd.h
+ |-📄 STMNativeAd.h
+ |-📄 STMNativeAdView.h
+ |-📄 STMNativeAdImage.h
+ |-📃 libSuntengMobileAdsSDK.a</code></pre></div>
+
+<h4 id="toc_4">2.2、添加需要的 Framework：</h4>
 
 <div><pre><code class="language-objectivec">AdSupport.framework
 CoreGraphics.framework
@@ -494,67 +505,47 @@ StoreKit.framework
 SystemConfiguration.framework
 UIKit.framework</code></pre></div>
 
-<p>2.3、设置对应 <strong>target</strong> 的编译选项，在『Build Settings』-&gt;『Linking』-&gt;『Other Linker Flags』，添加 <code>-ObjC</code> 参数。</p>
+<h4 id="toc_5">2.3、设置对应 <strong>target</strong> 的编译选项，在『Build Settings』-&gt;『Linking』-&gt;『Other Linker Flags』，添加 <code>-ObjC</code> 参数。</h4>
 
-<p>2.4、iOS 8.0+ 获取地理位置适配</p>
+<h4 id="toc_6">2.4、iOS 8.0+ 获取地理位置适配</h4>
 
-<p>在 info.plist 里加入对应的定位请求字段，值可以为空或者填写获取定位请求提示框要显示的内容。</p>
+<p>在 info.plist 里加入对应的定位请求字段，值填写获取定位请求提示框要显示的内容。</p>
 
 <div><pre><code class="language-XML">&lt;key&gt;NSLocationWhenInUseUsageDescription&lt;/key&gt;
 &lt;string&gt;iOS 8 定位权限请求提示语！&lt;/string&gt;
 &lt;key&gt;NSLocationUsageDescription&lt;/key&gt;
-&lt;string&gt;iOS 10 定位权限请求提示语！&lt;/string&gt;</code></pre></div>
+&lt;string&gt;iOS 6 定位权限请求提示语！&lt;/string&gt;</code></pre></div>
 
 <p><strong>说明：由于部分广告会定向投递到某些城市，SDK 需要获取地理位置以支持广告的定向投放。</strong></p>
 
-<p>2.5、Xcode 7.0+ 、iOS 9.0+ 适配</p>
-
-<ul>
-<li><p>关于 <a href="https://developer.apple.com/library/prerelease/ios/technotes/App-Transport-Security-Technote/index.html#//apple_ref/doc/uid/TP40016240"><em>ATS</em></a></p>
-
-<p><strong>解决方案：禁用 ATS。</strong></p>
-
-<p>在应用的 Info.plist 中添加禁用 ATS 代码。代码如下：</p></li>
-</ul>
-
-<div><pre><code class="language-XML">&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;
-&lt;dict&gt;
-    &lt;key&gt;NSAllowsArbitraryLoads&lt;/key&gt;
-    &lt;true/&gt;
-&lt;/dict&gt;</code></pre></div>
-
-<ul>
-<li><p>关于 Bitcode</p>
-
-<p>Xcode 7.0 默认开启 <strong>Bitcode</strong> 编译选项（无 <strong>Bitcode</strong> 配置，默认为开启）， SDK 支持 <strong>Bitcode</strong> ，如果您的工程中有其它不支持 <strong>Bitcode</strong> 特性的库可能编译不过。</p>
-
-<p><strong>解决方案：请将项目对应『Target』-&gt;『Build Settings』-&gt;『Build Options』-&gt;『Enable Bitcode』选项设置为 No 。</strong></p></li>
-</ul>
-
-<h2 id="toc_3">3、SDK 使用</h2>
-
-<h3 id="toc_4">3.1、横幅 SDK</h3>
+<h2 id="toc_7">3、SDK 使用</h2>
 
 <p>在使用 SDK 的代码中加入头文件。</p>
 
 <div><pre><code class="language-objectivec">#import &quot;SuntengMobileAdsSDK.h&quot;</code></pre></div>
 
-<h4 id="toc_5">3.1.1、初始化横幅 SDK</h4>
+<p>初始化 SDK</p>
 
-<div><pre><code class="language-objectivec">self.bannerView = [[STMBannerView alloc] initWithPublisherID:@&quot;2&quot;
-                                                           appID:@&quot;36&quot;
-                                                     placementID:@&quot;35&quot;
-                                                           appKey:@&quot;Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1&quot;
-                                                           frame:CGRectMake(0, 64, 320, 50)];
+<div><pre><code class="language-objectivec">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[SuntengMobileAdsSDK sharedInstance] registerSDKWithAppSecret:@&quot;Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1&quot;];
+    return YES;
+}</code></pre></div>
+
+<h3 id="toc_8">3.1、横幅广告</h3>
+
+<h4 id="toc_9">3.1.1、创建横幅广告</h4>
+
+<div><pre><code class="language-objectivec">self.bannerView = [[STMBannerView alloc] initWithAdUnitID:@&quot;2-36-35&quot;
+                                                    frame:CGRectMake(0, 64, 320, 50)];
 [self.bannerView loadAd];</code></pre></div>
 
-<h4 id="toc_6">3.1.2、展示横幅广告</h4>
+<h4 id="toc_10">3.1.2、展示横幅广告</h4>
 
 <div><pre><code class="language-objectivec">if (self.bannerView.isLoaded) {
     [self.view addSubview:self.bannerView];
 }</code></pre></div>
 
-<h4 id="toc_7">3.1.3、跟踪横幅广告生命周期</h4>
+<h4 id="toc_11">3.1.3、跟踪横幅广告生命周期</h4>
 
 <p>您可以通过实现 <code>STMBannerViewDelegate</code> 中定义的协议，来跟踪广告生命周期中的各个阶段。所有方法定义如下：</p>
 
@@ -570,7 +561,7 @@ UIKit.framework</code></pre></div>
 // 当横幅广告被关闭后，回调该方法
 - (void)bannerViewDidDismiss:(STMBannerView *)bannerView;</code></pre></div>
 
-<h4 id="toc_8">3.1.4、优化横幅广告获取、展示</h4>
+<h4 id="toc_12">3.1.4、优化横幅广告获取、展示</h4>
 
 <p>在横幅广告不在界面展示时，建议开发者使用以下两个方法暂停和恢复广告的自动刷新，减少在无展示时的刷新行为。</p>
 
@@ -580,20 +571,13 @@ UIKit.framework</code></pre></div>
 // 恢复 Banner 自动刷新
 - (void)startAutomaticallyRefreshingAd;</code></pre></div>
 
-<h3 id="toc_9">3.2、插屏 SDK</h3>
+<h3 id="toc_13">3.2、插屏广告</h3>
 
-<p>在使用 SDK 的代码中加入头文件。</p>
+<h4 id="toc_14">3.2.1、创建插屏广告</h4>
 
-<div><pre><code class="language-objectivec">#import &quot;SuntengMobileAdsSDK.h&quot;</code></pre></div>
+<div><pre><code class="language-objectivec">self.interstitialAdController = [STMInterstitialAdController interstitialAdControllerWithAdUnitID:@&quot;2-36-36&quot;];</code></pre></div>
 
-<h4 id="toc_10">3.2.1、初始化插屏 SDK</h4>
-
-<div><pre><code class="language-objectivec">self.interstitialAdController = [STMInterstitialAdController interstitialAdControllerWithPublisherID:@&quot;2&quot;
-                                                                                                   appID:@&quot;36&quot;
-                                                                                             placementID:@&quot;36&quot;
-                                                                                                  appKey:@&quot;Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1&quot;];</code></pre></div>
-
-<h4 id="toc_11">3.2.2、展示插屏广告</h4>
+<h4 id="toc_15">3.2.2、展示插屏广告</h4>
 
 <p>当您需要展示插屏广告时，请在尝试展示之前检查它是否已准备就绪。</p>
 
@@ -601,7 +585,7 @@ UIKit.framework</code></pre></div>
     [self.interstitialAdController presentFromViewController:self];
 } </code></pre></div>
 
-<h4 id="toc_12">3.2.3、跟踪插屏广告生命周期</h4>
+<h4 id="toc_16">3.2.3、跟踪插屏广告生命周期</h4>
 
 <p>您可以通过实现 <code>STMInterstitialAdControllerDelegate</code> 中定义的协议，来跟踪广告生命周期中的各个阶段。所有方法定义如下：</p>
 
@@ -620,16 +604,13 @@ UIKit.framework</code></pre></div>
 // 当插屏广告被关闭后，回调该方法
 - (void)interstitialDidDismiss:(STMInterstitialAdController *)interstitial;</code></pre></div>
 
-<h3 id="toc_13">3.3、开屏 SDK</h3>
+<h3 id="toc_17">3.3、开屏广告</h3>
 
-<p>在使用 SDK 的代码中加入头文件。</p>
-
-<div><pre><code class="language-objectivec">#import &quot;SuntengMobileAdsSDK.h&quot;</code></pre></div>
-
-<h4 id="toc_14">3.3.1、初始化开屏 SDK、展示开屏广告</h4>
+<h4 id="toc_18">3.3.1、初始化开屏广告、展示开屏广告</h4>
 
 <div><pre><code class="language-objectivec">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //Override point for customization after application launch.
+    // 初始化 SDK
+    [[SuntengMobileAdsSDK sharedInstance] registerSDKWithAppSecret:@&quot;Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1&quot;];
     
     // 从 MainStoryboard 加载 rootViewController
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@&quot;Main&quot; bundle:nil];
@@ -640,11 +621,8 @@ UIKit.framework</code></pre></div>
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
     
-    // 初始化开屏 SDK
-    self.splashAd = [STMSplashAd splashAdWithPublisherID:@&quot;2&quot;
-                                                   appID:@&quot;36&quot;
-                                             placementID:@&quot;34&quot;
-                                                  appKey:@&quot;Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1&quot;];
+    // 初始化开屏广告
+    self.splashAd = [STMSplashAd splashAdWithAdUnitID:@&quot;2-36-34&quot;];
     
     self.splashAd.delegate = self;
     
@@ -655,7 +633,7 @@ UIKit.framework</code></pre></div>
     return YES;
 }</code></pre></div>
 
-<h4 id="toc_15">3.3.2、跟踪开屏广告生命周期</h4>
+<h4 id="toc_19">3.3.2、跟踪开屏广告生命周期</h4>
 
 <p>您可以通过实现 <code>STMSplashAdDelegate</code> 中定义的协议，来跟踪广告生命周期中的各个阶段。所有方法定义如下：</p>
 
@@ -671,11 +649,47 @@ UIKit.framework</code></pre></div>
 // 当开屏广告被关闭后，回调该方法
 - (void)splashDidDismiss:(STMSplashAd *)splash;</code></pre></div>
 
-<h4 id="toc_16">3.3.2、设置实时开屏广告请求超时时间</h4>
+<h4 id="toc_20">3.3.3、设置实时开屏广告请求超时时间</h4>
 
 <p>开屏广告混合了缓存的开屏广告和实时获取功能。当本地没有缓存的开屏广告或者本地已缓存广告超时时， SDK 会发起实时开屏广告请求，实时开屏广告超时时间内默认设定为 2 秒，以提高用户体验。您可以通过以下方法自定义超时时间，以提高实时开屏广告展示的成功几率。</p>
 
 <div><pre><code class="language-objectivec">- (void)setRealtimeSplashTimeoutInterval:(CGFloat)interval;</code></pre></div>
+
+<h3 id="toc_21">3.4、原生广告</h3>
+
+<h4 id="toc_22">3.4.1、创建原生广告</h4>
+
+<div><pre><code class="language-objectivec">self.nativeAd = [[STMNativeAd alloc] initWithAdUnitID:@&quot;2-36-53&quot;];
+[self.nativeAd loadAd];</code></pre></div>
+
+<h4 id="toc_23">3.4.2、展示原生广告</h4>
+
+<p>从 <code>STMNativeAdView</code> 子类化一个视图，并根据自己的样式需求使用 <code>STMNativeAd</code> 提供的元素：</p>
+
+<div><pre><code class="language-objectivec">@property (nullable, nonatomic, strong, readonly) STMNativeAdImage *logo;
+@property (nullable, nonatomic, strong, readonly) NSString *title;
+@property (nullable, nonatomic, strong, readonly) NSString *detail;
+@property (nullable, nonatomic, strong, readonly) STMNativeAdImage *icon;
+@property (nullable, nonatomic, strong, readonly) NSString *action;
+@property (nullable, nonatomic, strong, readonly) NSArray&lt;STMNativeAdImage *&gt; *images;</code></pre></div>
+
+<p>添加到视图上，并布局好。</p>
+
+<p>添加展示视图前，先调用 <code>- (void)registerNativeAdView:(STMNativeAdView *)nativeAdView withViewController:(UIViewController *)viewController;</code> 方法将视图和广告绑定起来。</p>
+
+<h4 id="toc_24">3.4.3、跟踪原生广告生命周期</h4>
+
+<div><pre><code class="language-objectivec">// 当原生广告被成功加载后，回调该方法
+- (void)nativeAdDidLoad:(STMNativeAd *)nativeAd;
+
+// 当原生广告加载失败后，回调该方法
+- (void)nativeAd:(STMNativeAd *)nativeAd didLoadFailWithError:(NSError *)error;
+
+// 当原生广告展示出来时，回调该方法
+- (void)nativeAdDidPresent:(STMNativeAd *)nativeAd;
+
+// 当用户点击广告，回调该方法
+- (void)nativeAdDidTap:(STMNativeAd *)nativeAd;</code></pre></div>
 
 
 

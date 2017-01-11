@@ -22,42 +22,21 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Create and return a `STMBannerView` instance.
  *
- *  @param publisherID The publisher ID.
- *  @param appID       The app ID.
- *  @param placementID The placement ID.
- *  @param appKey      The app key.
+ *  @param adUnitID    The ad unit ID.
  *  @param frame       The banner view frame.
  *
  *  @return A `STMInterstitialAdController` instance.
  */
-- (nullable instancetype)initWithPublisherID:(NSString *)publisherID
-                                       appID:(NSString *)appID
-                                 placementID:(NSString *)placementID
-                                      appKey:(NSString *)appKey
-                                       frame:(CGRect)frame;
+- (nullable instancetype)initWithAdUnitID:(NSString *)adUnitID
+                                    frame:(CGRect)frame;
 
 - (instancetype)init __attribute__((unavailable("can not use `- init` method, please use `- initWithPublisherId:appId:placementId:appKey:frame:` method")));
 + (instancetype)new __attribute__((unavailable("can not use `+ new` method, please use `- initWithPublisherId:appId:placementId:appKey:frame:` method")));
 
 /**
- *  The poublisher ID.
+ *  The ad unit ID.
  */
-@property (nonatomic, copy, readonly) NSString *publisherID;
-
-/**
- *  The app ID.
- */
-@property (nonatomic, copy, readonly) NSString *appID;
-
-/**
- *  The placement ID.
- */
-@property (nonatomic, copy, readonly) NSString *placementID;
-
-/**
- *  The app key.
- */
-@property (nonatomic, copy, readonly) NSString *appKey;
+@property (nonatomic, copy, readonly) NSString *adUnitID;
 
 /**
  *  The `STMBannerView` delegate.

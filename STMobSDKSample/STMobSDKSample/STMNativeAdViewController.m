@@ -21,10 +21,7 @@
 
 - (IBAction)loadNativeAdButtonPressed:(UIButton *)button {
     // 初始化一个原生广告对象
-    self.nativeAd = [[STMNativeAd alloc] initWithPublisherID:PUBLISHERID
-                                                       appID:APPID
-                                                 placementID:@"53"
-                                                      appKey:APPKEY];
+    self.nativeAd = [[STMNativeAd alloc] initWithAdUnitID:@"2-36-53"];
     self.nativeAd.delegate = self;
     [self.nativeAd loadAd];
 }

@@ -20,6 +20,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    // 初始化 SDK
+    [[SuntengMobileAdsSDK sharedInstance] registerSDKWithAppSecret:@"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"];
+    
     application.statusBarHidden = YES;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *vc = [storyboard instantiateInitialViewController];
@@ -28,10 +31,7 @@
     [self.window makeKeyAndVisible];
     
     // splash SDK
-    self.splashAd = [STMSplashAd splashAdWithPublisherID:PUBLISHERID
-                                                   appID:APPID
-                                             placementID:@"34"
-                                                  appKey:APPKEY];
+    self.splashAd = [STMSplashAd splashAdWithAdUnitID:@"2-36-34"];
     self.splashAd.delegate = self;
     
     // 设置一个跟启动屏幕一致的图片作为背景图
