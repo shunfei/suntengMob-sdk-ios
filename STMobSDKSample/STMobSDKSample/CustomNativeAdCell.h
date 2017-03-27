@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class STMNativeAdView;
+@class SMANativeAdView;
 
 @interface CustomNativeAdCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
@@ -15,5 +15,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *adDetailLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *adLogoImageView;
 
-@property (weak, nonatomic) IBOutlet STMNativeAdView *nativeAdView;
+@property (weak, nonatomic) IBOutlet SMANativeAdView *nativeAdView;
 @end

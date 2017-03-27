@@ -7,11 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "SuntengMobileAdsSDK.h"
+#import "SuntengMobileAds.h"
 
-@interface AppDelegate () <STMSplashAdDelegate>
+@interface AppDelegate () <SMASplashAdDelegate>
 
-@property (nonatomic, strong) STMSplashAd *splashAd;
+@property (nonatomic, strong) SMASplashAd *splashAd;
 
 @end
 
@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     // 初始化 SDK
-    [[SuntengMobileAdsSDK sharedInstance] registerSDKWithAppSecret:@"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"];
+    [[SuntengMobileAds sharedSDK] registerWithAppSecret:@"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"];
     
     application.statusBarHidden = YES;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -31,7 +31,7 @@
     [self.window makeKeyAndVisible];
     
     // splash SDK
-    self.splashAd = [STMSplashAd splashAdWithAdUnitID:@"2-36-34"];
+    self.splashAd = [SMASplashAd splashAdWithAdUnitID:@"2-36-34"];
     self.splashAd.delegate = self;
     
     // 设置一个跟启动屏幕一致的图片作为背景图
@@ -59,25 +59,25 @@
     return YES;
 }
 
-#pragma mark - STMSplashAdDelegate
+#pragma mark - SMASplashAdDelegate
 
 // 当开屏广告被成功展示后，回调该方法
-- (void)splashDidPresent:(STMSplashAd *)splash {
+- (void)splashDidPresent:(SMASplashAd *)splash {
     NSLog(@"%s", __func__);
 }
 
 // 当开屏广告展示失败后，回调该方法
-- (void)splashlFailPresent:(STMSplashAd *)splash {
+- (void)splashlFailPresent:(SMASplashAd *)splash {
     NSLog(@"%s", __func__);
 }
 
 // 当用户点击广告，回调该方法
-- (void)splashDidTap:(STMSplashAd *)splash {
+- (void)splashDidTap:(SMASplashAd *)splash {
     NSLog(@"%s", __func__);
 }
 
 // 当开屏广告被关闭后，回调该方法
-- (void)splashDidDismiss:(STMSplashAd *)splash {
+- (void)splashDidDismiss:(SMASplashAd *)splash {
     NSLog(@"%s", __func__);
     [UIApplication sharedApplication].statusBarHidden = NO;
 }

@@ -1,45 +1,48 @@
-# 舜飞移动广告 SDK iOS 版 v2.0.5 开发文档
+# 舜飞移动广告 SDK iOS 版 v3.0.0 集成、使用文档
 
 ## 1、开发环境
 
 * Xcode 7.0 或更高版本
 * 支持 iOS 6.0.0 或更高版本
 
-关于 **AdUnitID**、**AppSecret**。请从 [官网](http://mbv.biddingx.com/main/) 获取 AdUnitID、AppSecret。
+请从 [官网](http://mbv.biddingx.com/main/) 注册并获取 **AdUnitID**、**AppSecret**。
 
 ## 2、SDK 集成
 
-#### 2.1、将最新的 SDK 文件夹加入项目中，包含以下头文件和静态库文件：
+#### 2.1、将 SDK 文件夹加入项目中，包含以下头文件和静态库文件：
 
 ```objc
--📂 SuntengMobileAdsSDK
- |-📄 SuntengMobileAdsSDK.h
- |-📄 STMConstants.h
- |-📄 STMBannerView.h
- |-📄 STMInterstitialAdController.h
- |-📄 STMSplashAd.h
- |-📄 STMNativeAd.h
- |-📄 STMNativeAdView.h
- |-📄 STMNativeAdImage.h
- |-📃 libSuntengMobileAdsSDK.a
+-📂 SuntengMobileAds
+ |-📄 SuntengMobileAds.h
+ |-📄 SMAConstants.h
+ |-📄 SMABannerView.h
+ |-📄 SMAInterstitialAdController.h
+ |-📄 SMASplashAd.h
+ |-📄 SMAModalVideoAd.h
+ |-📄 SMAWindowVideoAd.h
+ |-📄 SMANativeAd.h
+ |-📄 SMANativeAdView.h
+ |-📄 SMANativeAdImage.h
+ |-📃 libSuntengMobileAds.a
 ```
 
 #### 2.2、添加需要的 Framework：
 
 ```objc
 AdSupport.framework
-CoreGraphics.framework
+AVFoundation.framework
 CoreLocation.framework
 CoreTelephony.framework
 Foundation.framework
 StoreKit.framework
 SystemConfiguration.framework
 UIKit.framework
+libz.tbd
 ```
 	
 #### 2.3、设置对应 **target** 的编译选项，在『Build Settings』->『Linking』->『Other Linker Flags』，添加 `-ObjC` 参数。
 
-#### 2.4、iOS 8.0+ 获取地理位置适配
+#### 2.4、iOS 6.0、8.0 获取地理位置适配
 
 在 info.plist 里加入对应的定位请求字段，值填写获取定位请求提示框要显示的内容。
 
@@ -57,16 +60,29 @@ UIKit.framework
 在使用 SDK 的代码中加入头文件。
 
 ```objc
-#import "SuntengMobileAdsSDK.h"
+#import "SuntengMobileAds.h"
 ```
 
-初始化 SDK
+**初始化 SDK**
 
 ```objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[SuntengMobileAdsSDK sharedInstance] registerSDKWithAppSecret:@"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"];
+    [[SuntengMobileAds sharedSDK] registerSDKWithAppSecret:@"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"];
     return YES;
 }
+```
+
+**其它公共方法**
+
+```objc
+// 获取当前 SDK 版本
+- (NSString *)version;
+
+// 关闭基于位置的广告投放
+- (void)disableLocationService;
+
+// 打开 log
+- (void)enableLoger;
 ```
 
 ### 3.1、横幅广告
@@ -74,12 +90,19 @@ UIKit.framework
 #### 3.1.1、创建横幅广告
 
 ```objc
-self.bannerView = [[STMBannerView alloc] initWithAdUnitID:@"2-36-35"
+self.bannerView = [[SMABannerView alloc] initWithAdUnitID:@"2-36-35"
                                                     frame:CGRectMake(0, 64, 320, 50)];
+```
+
+#### 3.1.2、请求横幅广告
+
+```objc
 [self.bannerView loadAd];
 ```
 
-#### 3.1.2、展示横幅广告
+#### 3.1.3、展示横幅广告
+
+当您需要展示横幅广告时，请在尝试展示之前检查它是否已准备就绪。
 
 ```objc
 if (self.bannerView.isLoaded) {
@@ -87,25 +110,25 @@ if (self.bannerView.isLoaded) {
 }
 ```
 
-#### 3.1.3、跟踪横幅广告生命周期
+#### 3.1.4、跟踪横幅广告生命周期
 
-您可以通过实现 `STMBannerViewDelegate ` 中定义的协议，来跟踪广告生命周期中的各个阶段。所有方法定义如下：
+您可以通过实现 `SMABannerViewDelegate ` 中定义的协议，来跟踪广告生命周期中的各个阶段。所有方法定义如下：
 
 ```objc
 // 当横幅广告被成功加载后，回调该方法
-- (void)bannerViewDidLoadAd:(STMBannerView *)bannerView;
+- (void)bannerViewDidLoadAd:(SMABannerView *)bannerView;
 
 // 当横幅广告加载失败后，回调该方法
-- (void)bannerView:(STMBannerView *)bannerView didFailToLoadAdWithError:(NSError *)error;
+- (void)bannerView:(SMABannerView *)bannerView didFailToLoadAdWithError:(NSError *)error;
 
 // 当用户点击广告，回调该方法
-- (void)bannerViewDidTap:(STMBannerView *)bannerView;
+- (void)bannerViewDidTap:(SMABannerView *)bannerView;
 
 // 当横幅广告被关闭后，回调该方法
-- (void)bannerViewDidDismiss:(STMBannerView *)bannerView;
+- (void)bannerViewDidDismiss:(SMABannerView *)bannerView;
 ```
 
-#### 3.1.4、优化横幅广告获取、展示
+#### 3.1.5、优化横幅广告获取、展示
 
 在横幅广告不在界面展示时，建议开发者使用以下两个方法暂停和恢复广告的自动刷新，减少在无展示时的刷新行为。
 
@@ -122,10 +145,16 @@ if (self.bannerView.isLoaded) {
 #### 3.2.1、创建插屏广告
 
 ```objc
-self.interstitialAdController = [STMInterstitialAdController interstitialAdControllerWithAdUnitID:@"2-36-36"];
+self.interstitialAdController = [SMAInterstitialAdController interstitialAdControllerWithAdUnitID:@"2-36-36"];
 ```
 
-#### 3.2.2、展示插屏广告
+#### 3.2.2、请求插屏广告
+
+```objc
+[self.interstitialAdController loadAd];
+```
+
+#### 3.2.3、展示插屏广告
 
 当您需要展示插屏广告时，请在尝试展示之前检查它是否已准备就绪。
 
@@ -135,25 +164,25 @@ if (self.interstitialAdController.isLoaded) {
 } 
 ```
 
-#### 3.2.3、跟踪插屏广告生命周期
+#### 3.2.4、跟踪插屏广告生命周期
 
-您可以通过实现 `STMInterstitialAdControllerDelegate ` 中定义的协议，来跟踪广告生命周期中的各个阶段。所有方法定义如下：
+您可以通过实现 `SMAInterstitialAdControllerDelegate ` 中定义的协议，来跟踪广告生命周期中的各个阶段。所有方法定义如下：
 
 ```objc
 // 当插屏广告被成功加载后，回调该方法
-- (void)interstitialDidLoad:(STMInterstitialAdController *)interstitial;
+- (void)interstitialDidLoad:(SMAInterstitialAdController *)interstitial;
 
 // 当插屏广告加载失败后，回调该方法
-- (void)interstitialDidLoadFail:(STMInterstitialAdController *)interstitial;
+- (void)interstitialDidLoadFail:(SMAInterstitialAdController *)interstitial;
 
 // 当插屏广告展示出来时，回调该方法
-- (void)interstitialDidPresent:(STMInterstitialAdController *)interstitial;
+- (void)interstitialDidPresent:(SMAInterstitialAdController *)interstitial;
 
 // 当用户点击广告，回调该方法
-- (void)interstitialDidTap:(STMInterstitialAdController *)interstitial;
+- (void)interstitialDidTap:(SMAInterstitialAdController *)interstitial;
 
 // 当插屏广告被关闭后，回调该方法
-- (void)interstitialDidDismiss:(STMInterstitialAdController *)interstitial;
+- (void)interstitialDidDismiss:(SMAInterstitialAdController *)interstitial;
 ```
 
 ### 3.3、开屏广告
@@ -163,7 +192,7 @@ if (self.interstitialAdController.isLoaded) {
 ```objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 初始化 SDK
-    [[SuntengMobileAdsSDK sharedInstance] registerSDKWithAppSecret:@"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"];
+    [[SuntengMobileAds sharedSDK] registerSDKWithAppSecret:@"Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1"];
     
     // 从 MainStoryboard 加载 rootViewController
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -175,7 +204,7 @@ if (self.interstitialAdController.isLoaded) {
     [self.window makeKeyAndVisible];
     
     // 初始化开屏广告
-    self.splashAd = [STMSplashAd splashAdWithAdUnitID:@"2-36-34"];
+    self.splashAd = [SMASplashAd splashAdWithAdUnitID:@"2-36-34"];
     
     self.splashAd.delegate = self;
     
@@ -189,20 +218,20 @@ if (self.interstitialAdController.isLoaded) {
 
 #### 3.3.2、跟踪开屏广告生命周期
 
-您可以通过实现 `STMSplashAdDelegate ` 中定义的协议，来跟踪广告生命周期中的各个阶段。所有方法定义如下：
+您可以通过实现 `SMASplashAdDelegate ` 中定义的协议，来跟踪广告生命周期中的各个阶段。所有方法定义如下：
 
 ```objc
 // 当开屏广告被成功展示后，回调该方法
-- (void)splashDidPresent:(STMSplashAd *)splash;
+- (void)splashDidPresent:(SMASplashAd *)splash;
 
 // 当开屏广告展示失败后，回调该方法
-- (void)splashFailPresent:(STMSplashAd *)splash;
+- (void)splashFailPresent:(SMASplashAd *)splash;
 
 // 当用户点击广告，回调该方法
-- (void)splashDidTap:(STMSplashAd *)splash;
+- (void)splashDidTap:(SMASplashAd *)splash;
 
 // 当开屏广告被关闭后，回调该方法
-- (void)splashDidDismiss:(STMSplashAd *)splash;
+- (void)splashDidDismiss:(SMASplashAd *)splash;
 ```
 
 #### 3.3.3、设置实时开屏广告请求超时时间
@@ -218,39 +247,139 @@ if (self.interstitialAdController.isLoaded) {
 #### 3.4.1、创建原生广告
 
 ```objc
-self.nativeAd = [[STMNativeAd alloc] initWithAdUnitID:@"2-36-53"];
+self.nativeAd = [[SMANativeAd alloc] initWithAdUnitID:@"2-36-53"];
+```
+
+#### 3.4.2、请求原生广告
+
+```objc
 [self.nativeAd loadAd];
 ```
 
-#### 3.4.2、展示原生广告
+#### 3.4.3、展示原生广告
 
-从 `STMNativeAdView` 子类化一个视图，并根据自己的样式需求使用 `STMNativeAd` 提供的元素：
+从 `SMANativeAdView` 子类化一个视图，并根据自己的样式需求使用 `SMANativeAd` 提供的元素：
 
 ```objc
-@property (nullable, nonatomic, strong, readonly) STMNativeAdImage *logo;
+@property (nullable, nonatomic, strong, readonly) SMANativeAdImage *logo;
 @property (nullable, nonatomic, strong, readonly) NSString *title;
 @property (nullable, nonatomic, strong, readonly) NSString *detail;
-@property (nullable, nonatomic, strong, readonly) STMNativeAdImage *icon;
+@property (nullable, nonatomic, strong, readonly) SMANativeAdImage *icon;
 @property (nullable, nonatomic, strong, readonly) NSString *action;
-@property (nullable, nonatomic, strong, readonly) NSArray<STMNativeAdImage *> *images;
+@property (nullable, nonatomic, strong, readonly) NSArray<SMANativeAdImage *> *images;
 ```
 
 添加到视图上，并布局好。
 
-添加展示视图前，先调用 `- (void)registerNativeAdView:(STMNativeAdView *)nativeAdView withViewController:(UIViewController *)viewController;` 方法将视图和广告绑定起来。
+添加展示视图前，先调用 `- (void)registerNativeAdView:(SMANativeAdView *)nativeAdView withViewController:(UIViewController *)viewController;` 方法将视图和广告绑定起来。
 
-#### 3.4.3、跟踪原生广告生命周期
+#### 3.4.4、跟踪原生广告生命周期
 
 ```objc
 // 当原生广告被成功加载后，回调该方法
-- (void)nativeAdDidLoad:(STMNativeAd *)nativeAd;
+- (void)nativeAdDidLoad:(SMANativeAd *)nativeAd;
 
 // 当原生广告加载失败后，回调该方法
-- (void)nativeAd:(STMNativeAd *)nativeAd didLoadFailWithError:(NSError *)error;
+- (void)nativeAd:(SMANativeAd *)nativeAd didLoadFailWithError:(NSError *)error;
 
 // 当原生广告展示出来时，回调该方法
-- (void)nativeAdDidPresent:(STMNativeAd *)nativeAd;
+- (void)nativeAdDidPresent:(SMANativeAd *)nativeAd;
 
 // 当用户点击广告，回调该方法
-- (void)nativeAdDidTap:(STMNativeAd *)nativeAd;
+- (void)nativeAdDidTap:(SMANativeAd *)nativeAd;
+```
+
+### 3.5、全屏视频广告
+
+#### 3.5.1、创建全屏视频广告
+
+```objc
+self.modalVideoAd = [[SMAModalVideoAd alloc] initWithAdUnitID:@"2-36-41"];
+```
+
+#### 3.5.2、请求全屏视频广告
+
+```objc
+[self.modalVideoAd loadAd];
+```
+
+#### 3.5.3、展示全屏视频广告
+
+当您需要展示全屏视频广告时，请在尝试展示之前检查它是否已准备就绪。
+
+```objc
+if (self.modalVideoAd.isReady) {
+    [self.modalVideoAd presentFromViewController:rootViewController];
+}
+```
+
+#### 3.5.4、跟踪全屏视频广告生命周期
+
+```objc
+- (void)modalVideoAdDidLoad:(SMAModalVideoAd *)modalVideoAd;
+
+- (void)modalVideoAd:(SMAModalVideoAd *)modalVideoAd didFailToLoadWithError:(NSError *)error;
+
+- (void)modalVideoAd:(SMAModalVideoAd *)modalVideoAd didFailToPlayWithError:(NSError *)error;
+
+- (void)modalVideoAdDidTap:(SMAModalVideoAd *)modalVideoAd;
+
+- (void)modalVideoAdDidPlayFinished:(SMAModalVideoAd *)modalVideoAd;
+
+- (void)modalVideoAdDidClose:(SMAModalVideoAd *)modalVideoAd;
+```
+#### 3.5.5、全屏视频其它 API
+
+```objc
+// 是否展示广告关闭按钮
+- (void)showCloseVideoButton:(BOOL)yesOrNo;
+
+// 自定义关闭提示语
+- (void)customizeAlertViewContents:(NSString *)contents;
+```
+
+### 3.6、窗口视频广告
+
+#### 3.5.1、创建窗口视频广告
+
+```objc
+self.windowVideoAd = [[SMAWindowVideoAd alloc] initWithAdUnitID:@"2-36-41"];
+```
+
+#### 3.5.2、请求窗口视频广告
+
+```objc
+[self.windowVideoAd loadAd];
+```
+
+#### 3.5.3、展示窗口视频广告
+
+当您需要展示窗口视频广告时，请在尝试展示之前检查它是否已准备就绪。
+
+```objc
+if (self.windowVideoAd.isReady) {
+    [self.windowVideoAd disposeInView:containerView presentFromViewController:rootViewController];
+}
+```
+
+#### 3.5.4、控制窗口视频广告播放、暂停
+
+当将广告添加在 UIScrollView、UITableView 等可滚动的控件上时，请自行在视频滚出屏幕时，使用 - (void)playVideo; 和 - (void)pauseVideo; 方法控制视频的暂停和继续播放。
+
+```objc
+[self.windowVideoAd playVideo];
+
+[self.windowVideoAd pauseVideo];
+```
+
+#### 3.5.5、跟踪窗口视频广告生命周期
+
+```objc
+- (void)windowVideoAdDidLoad:(SMAWindowVideoAd *)windowVideoAd;
+
+- (void)windowVideoAd:(SMAWindowVideoAd *)windowVideoAd didFailToLoadWithError:(NSError *)error;
+
+- (void)windowVideoAdDidTap:(SMAWindowVideoAd *)windowVideoAd;
+
+- (void)windowVideoAdDidPlayFinished:(SMAWindowVideoAd *)windowVideoAd;
 ```

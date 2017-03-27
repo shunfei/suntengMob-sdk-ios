@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "STMNativeAdView.h"
+#import "SMANativeAdView.h"
 @interface CustomNativeAdView : UIView
 @property (weak, nonatomic) IBOutlet UIImageView *nativeAdIconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nativeAdTitleLabel;
@@ -16,5 +16,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *nativeAdImageView2;
 @property (weak, nonatomic) IBOutlet UIImageView *nativeAdImageView3;
 @property (weak, nonatomic) IBOutlet UIImageView *nativeAdProviderImageView;
-@property (weak, nonatomic) IBOutlet STMNativeAdView *adContainerView;
+@property (weak, nonatomic) IBOutlet SMANativeAdView *adContainerView;
 @end

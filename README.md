@@ -8,6 +8,12 @@
 
 ## Change Log
 
+03/27/2017 - v3.0.0
+
+* Add modal video ad.
+* Add window video ad.
+* Update API.
+
 01/11/2017 - v2.0.5
 
 * Update API.
