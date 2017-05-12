@@ -23,7 +23,8 @@
  |-📄 SMANativeAd.h
  |-📄 SMANativeAdView.h
  |-📄 SMANativeAdImage.h
- |-📃 libSuntengMobileAds.a
+ |-📄 SMAPreMovieAd.h
+ |-📦 libSuntengMobileAds.a
 ```
 
 #### 2.2、添加需要的 Framework：
@@ -340,21 +341,21 @@ if (self.modalVideoAd.isReady) {
 
 ### 3.6、窗口视频广告
 
-#### 3.5.1、创建窗口视频广告
+#### 3.6.1、创建窗口视频广告
 
 ```objc
 self.windowVideoAd = [[SMAWindowVideoAd alloc] initWithAdUnitID:@"2-36-41"];
 ```
 
-#### 3.5.2、请求窗口视频广告
+#### 3.6.2、请求窗口视频广告
 
 ```objc
 [self.windowVideoAd loadAd];
 ```
 
-#### 3.5.3、展示窗口视频广告
+#### 3.6.3、展示窗口视频广告
 
-当您需要展示窗口视频广告时，请在尝试展示之前检查它是否已准备就绪。
+当您需要展示窗口视频广告时（**请提前获取广告，并在广告资源下载成功后再展示**），请在展示之前检查它是否已准备就绪。
 
 ```objc
 if (self.windowVideoAd.isReady) {
@@ -362,17 +363,7 @@ if (self.windowVideoAd.isReady) {
 }
 ```
 
-#### 3.5.4、控制窗口视频广告播放、暂停
-
-当将广告添加在 UIScrollView、UITableView 等可滚动的控件上时，请自行在视频滚出屏幕时，使用 - (void)playVideo; 和 - (void)pauseVideo; 方法控制视频的暂停和继续播放。
-
-```objc
-[self.windowVideoAd playVideo];
-
-[self.windowVideoAd pauseVideo];
-```
-
-#### 3.5.5、跟踪窗口视频广告生命周期
+#### 3.6.4、跟踪窗口视频广告生命周期
 
 ```objc
 - (void)windowVideoAdDidLoad:(SMAWindowVideoAd *)windowVideoAd;
@@ -382,4 +373,57 @@ if (self.windowVideoAd.isReady) {
 - (void)windowVideoAdDidTap:(SMAWindowVideoAd *)windowVideoAd;
 
 - (void)windowVideoAdDidPlayFinished:(SMAWindowVideoAd *)windowVideoAd;
+```
+
+### 3.7、贴片视频广告
+
+#### 3.7.1、创建贴片视频广告
+
+```objc
+self.preMovieAd = [[SMAPreMovieAd alloc] initWithAdUnitID:@"2-36-143"];
+```
+
+#### 3.7.2、请求贴片视频广告
+
+```objc
+[self.preMovieAd loadAd];
+```
+
+#### 3.7.3、展示贴片视频广告
+
+当您需要展示贴片视频广告时（**请提前获取广告，并在广告资源下载成功后再展示**），请在展示之前检查它是否已准备就绪。
+
+```objc
+if (self.preMovieAd.isReady) {
+    [self.preMovieAd disposeInView:self.preMovieAdContainerView presentFromViewController:rootViewController];
+}
+```
+
+#### 3.7.4、跟踪贴片视频广告生命周期
+
+```objc
+- (void)preMovieAdDidLoad:(SMAPreMovieAd *)preMovieAd;
+
+- (void)preMovieAd:(SMAPreMovieAd *)preMovieAd didFailToLoadWithError:(NSError *)error;
+
+- (void)preMovieAdDidTap:(SMAPreMovieAd *)preMovieAd;
+
+- (void)preMovieAdDidPlayFinished:(SMAPreMovieAd *)preMovieAd;
+
+- (void)updatePreMovieAdPlayCurrentTime:(NSTimeInterval)time duration:(NSTimeInterval)duration;
+```
+
+#### 3.7.5、贴片视频其它 API
+
+```objc
+// 是否展示贴片广告进度倒计时
+@property(nonatomic, assign, getter=isTimeCounterHidden) BOOL timeCounterHidden;
+
+// 是否展示“查看详情”按钮
+@property(nonatomic, assign, getter=isCheckDetailButtonHidden) BOOL checkDetailButtonHidden;
+
+// 设置贴片广告支持的网络环境，默认支持 2G、3G、4G、Wi-Fi 网络环境下下载广告资源。
+@property (nonatomic, assign) SMASupportedNetworkOptions supportedNetwork;
+
+- (void)setMuteEnable:(BOOL)muteEnable;
 ```

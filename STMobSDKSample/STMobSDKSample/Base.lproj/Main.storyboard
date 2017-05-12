@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="77s-NU-S0Y">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="77s-NU-S0Y">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -122,6 +122,26 @@
                                             <segue destination="MgK-k1-tsj" kind="push" id="Et2-Lx-6bJ"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="hDQ-25-lxY" style="IBUITableViewCellStyleDefault" id="MzO-9X-v5H">
+                                        <rect key="frame" x="0.0" y="220" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MzO-9X-v5H" id="x42-ej-IiI">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="贴片视频广告" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hDQ-25-lxY">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="IWk-70-Wsh" kind="push" id="evx-II-nEq"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -214,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="442" y="-2"/>
+            <point key="canvasLocation" x="413" y="-448"/>
         </scene>
         <!--原生广告-->
         <scene sceneID="VAv-P9-3XX">
@@ -270,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4a-Ne-APW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="918.5" y="387.5"/>
+            <point key="canvasLocation" x="1266" y="513"/>
         </scene>
         <!--TableView示例-->
         <scene sceneID="LZe-B1-PMd">
@@ -376,7 +396,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ux-4S-xe2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1371.5" y="382.5"/>
+            <point key="canvasLocation" x="1748" y="513"/>
         </scene>
         <!--横幅广告-->
         <scene sceneID="5ZA-nZ-3ry">
@@ -411,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ftu-c4-5np" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="442" y="754"/>
+            <point key="canvasLocation" x="834" y="17"/>
         </scene>
         <!--全屏视频广告-->
         <scene sceneID="S43-qm-Kut">
@@ -452,7 +472,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5X-fK-2B6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="935" y="1193"/>
+            <point key="canvasLocation" x="694" y="884"/>
+        </scene>
+        <!--贴片视频广告-->
+        <scene sceneID="4Ya-9r-s5E">
+            <objects>
+                <viewController id="IWk-70-Wsh" customClass="SMADemoPreMovieViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T6x-Im-C3i"/>
+                        <viewControllerLayoutGuide type="bottom" id="2at-QH-AMK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KEe-3A-1fA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ybo-Im-Yy7">
+                                <rect key="frame" x="16" y="72" width="92" height="30"/>
+                                <state key="normal" title="加载贴片广告"/>
+                                <connections>
+                                    <action selector="loadAd:" destination="IWk-70-Wsh" eventType="touchUpInside" id="LlP-4M-Nhf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJe-39-mQQ">
+                                <rect key="frame" x="267" y="72" width="92" height="30"/>
+                                <state key="normal" title="部署贴片广告"/>
+                                <connections>
+                                    <action selector="disposeAd:" destination="IWk-70-Wsh" eventType="touchUpInside" id="6sW-kl-08p"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7R-p6-xKA">
+                                <rect key="frame" x="67" y="243" width="240" height="180"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="Vrl-2A-VPK"/>
+                                    <constraint firstAttribute="width" constant="240" id="tia-wl-epB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ybo-Im-Yy7" firstAttribute="top" secondItem="T6x-Im-C3i" secondAttribute="bottom" constant="8" id="1M1-8K-8ss"/>
+                            <constraint firstItem="n7R-p6-xKA" firstAttribute="centerX" secondItem="KEe-3A-1fA" secondAttribute="centerX" id="Cam-66-yaH"/>
+                            <constraint firstAttribute="trailing" secondItem="WJe-39-mQQ" secondAttribute="trailing" constant="16" id="Kq6-cO-6uY"/>
+                            <constraint firstItem="n7R-p6-xKA" firstAttribute="centerY" secondItem="KEe-3A-1fA" secondAttribute="centerY" id="biu-Jn-XFk"/>
+                            <constraint firstItem="Ybo-Im-Yy7" firstAttribute="leading" secondItem="KEe-3A-1fA" secondAttribute="leading" constant="16" id="irM-EL-lKq"/>
+                            <constraint firstItem="WJe-39-mQQ" firstAttribute="top" secondItem="T6x-Im-C3i" secondAttribute="bottom" constant="8" id="iwm-t8-V2d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="贴片视频广告" id="lou-l1-2c8"/>
+                    <connections>
+                        <outlet property="playerView" destination="n7R-p6-xKA" id="CBg-Tb-ZQ7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bOO-Vo-9RS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-273" y="1217"/>
         </scene>
         <!--窗口视频广告-->
         <scene sceneID="ngz-E5-5ZY">
@@ -480,29 +554,11 @@
                                     <action selector="disposeWindowVideoAd:" destination="MgK-k1-tsj" eventType="touchUpInside" id="FVS-1T-ckA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfH-6Y-gnG">
-                                <rect key="frame" x="16" y="137" width="31" height="30"/>
-                                <state key="normal" title="播放"/>
-                                <connections>
-                                    <action selector="playVideo:" destination="MgK-k1-tsj" eventType="touchUpInside" id="9PS-nK-ceP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywG-V7-w4x">
-                                <rect key="frame" x="267" y="137" width="31" height="30"/>
-                                <state key="normal" title="暂停"/>
-                                <connections>
-                                    <action selector="pauseVideo:" destination="MgK-k1-tsj" eventType="touchUpInside" id="zM6-8b-bTJ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RfH-6Y-gnG" firstAttribute="leading" secondItem="lLP-aH-OXA" secondAttribute="leading" id="78l-xU-MtL"/>
-                            <constraint firstItem="RfH-6Y-gnG" firstAttribute="top" secondItem="lLP-aH-OXA" secondAttribute="bottom" constant="18" id="8UO-B4-HBw"/>
-                            <constraint firstItem="ywG-V7-w4x" firstAttribute="top" secondItem="bLc-hB-fc6" secondAttribute="bottom" constant="18" id="Rz0-6O-sfH"/>
                             <constraint firstItem="lLP-aH-OXA" firstAttribute="top" secondItem="i5m-lm-XpU" secondAttribute="bottom" constant="25" id="aWe-6k-3jL"/>
                             <constraint firstAttribute="leadingMargin" secondItem="lLP-aH-OXA" secondAttribute="leading" id="fnW-VR-1Ak"/>
-                            <constraint firstItem="ywG-V7-w4x" firstAttribute="leading" secondItem="bLc-hB-fc6" secondAttribute="leading" id="vKq-TI-OV9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bLc-hB-fc6" secondAttribute="trailing" id="yDN-zM-Gsp"/>
                             <constraint firstItem="bLc-hB-fc6" firstAttribute="centerY" secondItem="lLP-aH-OXA" secondAttribute="centerY" id="zot-5v-dsM"/>
                         </constraints>
@@ -511,7 +567,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvG-ot-Hdz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398" y="1184"/>
+            <point key="canvasLocation" x="183" y="1217"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

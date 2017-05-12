@@ -29,10 +29,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)disposeInView:(UIView *)view presentFromViewController:(UIViewController *)viewController;
 
-- (void)playVideo;
-
-- (void)pauseVideo;
-
 @end
 
 @protocol SMAWindowVideoAdDelegate <NSObject>

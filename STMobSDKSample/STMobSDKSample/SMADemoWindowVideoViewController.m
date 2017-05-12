@@ -52,14 +52,6 @@
     
 }
 
-- (IBAction)playVideo:(id)sender {
-    [self.windowVideoAd playVideo];
-}
-
-- (IBAction)pauseVideo:(id)sender {
-    [self.windowVideoAd pauseVideo];
-}
-
 #pragma mark - SMAWindowVideoAdDelegate
 - (void)windowVideoAdDidLoad:(SMAWindowVideoAd *)windowVideoAd {
     NSLog(@"%s", __FUNCTION__);

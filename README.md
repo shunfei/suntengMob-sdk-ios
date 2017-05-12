@@ -8,6 +8,11 @@
 
 ## Change Log
 
+05/12/2017 - v3.1.0
+
+* Add in-stream video ad.
+* Bugs fixes.
+
 03/27/2017 - v3.0.0
 
 * Add modal video ad.

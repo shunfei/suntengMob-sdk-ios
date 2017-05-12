@@ -27,6 +27,7 @@
 		C59E8F7B1CCA1A4900E4F152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59E8F7A1CCA1A4900E4F152 /* Foundation.framework */; };
 		C59E8F7D1CCA1A4F00E4F152 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59E8F7C1CCA1A4F00E4F152 /* SystemConfiguration.framework */; };
 		C59E8F7F1CCA1A5500E4F152 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C59E8F7E1CCA1A5500E4F152 /* UIKit.framework */; };
+		D802464A1EC5BFEE00679906 /* SMADemoPreMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80246491EC5BFEE00679906 /* SMADemoPreMovieViewController.m */; };
 		D86FAF5C1D17F379003432D8 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF531D17F379003432D8 /* LaunchImage.png */; };
 		D86FAF5D1D17F379003432D8 /* LaunchImage4.7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF541D17F379003432D8 /* LaunchImage4.7@2x.png */; };
 		D86FAF5E1D17F379003432D8 /* LaunchImage4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF551D17F379003432D8 /* LaunchImage4@2x.png */; };
@@ -75,6 +76,9 @@
 		C59E8F7A1CCA1A4900E4F152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C59E8F7C1CCA1A4F00E4F152 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C59E8F7E1CCA1A5500E4F152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D80246471EC5BF8F00679906 /* SMAPreMovieAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAPreMovieAd.h; sourceTree = "<group>"; };
+		D80246481EC5BFEE00679906 /* SMADemoPreMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMADemoPreMovieViewController.h; sourceTree = "<group>"; };
+		D80246491EC5BFEE00679906 /* SMADemoPreMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMADemoPreMovieViewController.m; sourceTree = "<group>"; };
 		D86FAF531D17F379003432D8 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		D86FAF541D17F379003432D8 /* LaunchImage4.7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage4.7@2x.png"; sourceTree = "<group>"; };
 		D86FAF551D17F379003432D8 /* LaunchImage4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage4@2x.png"; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 				330EC12F1E83C6C6007F4F8B /* SMADemoModalVideoViewController.m */,
 				330EC1311E83C6E0007F4F8B /* SMADemoWindowVideoViewController.h */,
 				330EC1321E83C6E0007F4F8B /* SMADemoWindowVideoViewController.m */,
+				D80246481EC5BFEE00679906 /* SMADemoPreMovieViewController.h */,
+				D80246491EC5BFEE00679906 /* SMADemoPreMovieViewController.m */,
 				C59E8F5C1CCA165300E4F152 /* Main.storyboard */,
 				C59E8F5F1CCA165300E4F152 /* Assets.xcassets */,
 				C59E8F641CCA165300E4F152 /* Info.plist */,
@@ -222,6 +228,7 @@
 				D8C106C81E88F68300FDC4D7 /* SMANativeAd.h */,
 				D8C106C91E88F68300FDC4D7 /* SMANativeAdImage.h */,
 				D8C106CA1E88F68300FDC4D7 /* SMANativeAdView.h */,
+				D80246471EC5BF8F00679906 /* SMAPreMovieAd.h */,
 				D8C106CB1E88F68300FDC4D7 /* SMASplashAd.h */,
 				D8C106CC1E88F68300FDC4D7 /* SMAWindowVideoAd.h */,
 				D8C106CD1E88F68300FDC4D7 /* SuntengMobileAds.h */,
@@ -256,12 +263,12 @@
 		C59E8F481CCA165200E4F152 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = sunteng;
 				TargetAttributes = {
 					C59E8F4F1CCA165200E4F152 = {
 						CreatedOnToolsVersion = 7.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -325,6 +332,7 @@
 				C59E8F581CCA165200E4F152 /* AppDelegate.m in Sources */,
 				C59E8F551CCA165200E4F152 /* main.m in Sources */,
 				330EC1301E83C6C6007F4F8B /* SMADemoModalVideoViewController.m in Sources */,
+				D802464A1EC5BFEE00679906 /* SMADemoPreMovieViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,8 +363,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -380,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -401,8 +411,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -420,7 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -441,7 +453,7 @@
 				INFOPLIST_FILE = STMobSDKSample/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -460,14 +472,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/STMobSDKSample/PrefixHeader.pch";
 				INFOPLIST_FILE = STMobSDKSample/Info.plist;
 				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
