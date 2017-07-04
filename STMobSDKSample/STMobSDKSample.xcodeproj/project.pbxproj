@@ -16,6 +16,9 @@
 		33F434E11DE574F0005B8189 /* CustomNativeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F434E01DE574F0005B8189 /* CustomNativeAdView.m */; };
 		33F434E51DE58EA0005B8189 /* CustomNativeAdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F434E41DE58EA0005B8189 /* CustomNativeAdCell.m */; };
 		33F434E81DE590D3005B8189 /* SMADemoNativeAdTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F434E71DE590D3005B8189 /* SMADemoNativeAdTableViewController.m */; };
+		573F5B361F0B9009001CB556 /* libSuntengMobileAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 573F5B291F0B9009001CB556 /* libSuntengMobileAds.a */; };
+		573F5B391F0B9119001CB556 /* SMADemoVideoNativeAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F5B381F0B9119001CB556 /* SMADemoVideoNativeAdViewController.m */; };
+		573F5B3D1F0B93D0001CB556 /* SMAVideoNativeAdTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F5B3C1F0B93D0001CB556 /* SMAVideoNativeAdTableViewCell.m */; };
 		C59E8F551CCA165200E4F152 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E8F541CCA165200E4F152 /* main.m */; };
 		C59E8F581CCA165200E4F152 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E8F571CCA165200E4F152 /* AppDelegate.m */; };
 		C59E8F5B1CCA165300E4F152 /* SMADemoInterstitialAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C59E8F5A1CCA165300E4F152 /* SMADemoInterstitialAdViewController.m */; };
@@ -37,7 +40,6 @@
 		D86FAF621D17F379003432D8 /* LaunchImage_Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF591D17F379003432D8 /* LaunchImage_Landscape@2x.png */; };
 		D86FAF631D17F379003432D8 /* LaunchImage_Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF5A1D17F379003432D8 /* LaunchImage_Portrait.png */; };
 		D86FAF641D17F379003432D8 /* LaunchImage_Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D86FAF5B1D17F379003432D8 /* LaunchImage_Portrait@2x.png */; };
-		D8C106CE1E88F68300FDC4D7 /* libSuntengMobileAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C106C31E88F68300FDC4D7 /* libSuntengMobileAds.a */; };
 		D8C106D01E88F6C400FDC4D7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C106CF1E88F6C400FDC4D7 /* AVFoundation.framework */; };
 		D8C106D21E88F6E000FDC4D7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C106D11E88F6DF00FDC4D7 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,23 @@
 		33F434E41DE58EA0005B8189 /* CustomNativeAdCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNativeAdCell.m; sourceTree = "<group>"; };
 		33F434E61DE590D3005B8189 /* SMADemoNativeAdTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMADemoNativeAdTableViewController.h; sourceTree = "<group>"; };
 		33F434E71DE590D3005B8189 /* SMADemoNativeAdTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMADemoNativeAdTableViewController.m; sourceTree = "<group>"; };
+		573F5B291F0B9009001CB556 /* libSuntengMobileAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuntengMobileAds.a; sourceTree = "<group>"; };
+		573F5B2A1F0B9009001CB556 /* SMABannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMABannerView.h; sourceTree = "<group>"; };
+		573F5B2B1F0B9009001CB556 /* SMAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAConstants.h; sourceTree = "<group>"; };
+		573F5B2C1F0B9009001CB556 /* SMAInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAInterstitialAdController.h; sourceTree = "<group>"; };
+		573F5B2D1F0B9009001CB556 /* SMAModalVideoAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAModalVideoAd.h; sourceTree = "<group>"; };
+		573F5B2E1F0B9009001CB556 /* SMANativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMANativeAd.h; sourceTree = "<group>"; };
+		573F5B2F1F0B9009001CB556 /* SMANativeAdImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMANativeAdImage.h; sourceTree = "<group>"; };
+		573F5B301F0B9009001CB556 /* SMANativeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMANativeAdView.h; sourceTree = "<group>"; };
+		573F5B311F0B9009001CB556 /* SMAPreMovieAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAPreMovieAd.h; sourceTree = "<group>"; };
+		573F5B321F0B9009001CB556 /* SMASplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMASplashAd.h; sourceTree = "<group>"; };
+		573F5B331F0B9009001CB556 /* SMAVideoNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAVideoNativeAd.h; sourceTree = "<group>"; };
+		573F5B341F0B9009001CB556 /* SMAWindowVideoAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAWindowVideoAd.h; sourceTree = "<group>"; };
+		573F5B351F0B9009001CB556 /* SuntengMobileAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuntengMobileAds.h; sourceTree = "<group>"; };
+		573F5B371F0B9119001CB556 /* SMADemoVideoNativeAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMADemoVideoNativeAdViewController.h; sourceTree = "<group>"; };
+		573F5B381F0B9119001CB556 /* SMADemoVideoNativeAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMADemoVideoNativeAdViewController.m; sourceTree = "<group>"; };
+		573F5B3B1F0B93D0001CB556 /* SMAVideoNativeAdTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAVideoNativeAdTableViewCell.h; sourceTree = "<group>"; };
+		573F5B3C1F0B93D0001CB556 /* SMAVideoNativeAdTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMAVideoNativeAdTableViewCell.m; sourceTree = "<group>"; };
 		C59E8F501CCA165200E4F152 /* STMobSDKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STMobSDKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C59E8F541CCA165200E4F152 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C59E8F561CCA165200E4F152 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,7 +95,6 @@
 		C59E8F7A1CCA1A4900E4F152 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C59E8F7C1CCA1A4F00E4F152 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C59E8F7E1CCA1A5500E4F152 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D80246471EC5BF8F00679906 /* SMAPreMovieAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAPreMovieAd.h; sourceTree = "<group>"; };
 		D80246481EC5BFEE00679906 /* SMADemoPreMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMADemoPreMovieViewController.h; sourceTree = "<group>"; };
 		D80246491EC5BFEE00679906 /* SMADemoPreMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMADemoPreMovieViewController.m; sourceTree = "<group>"; };
 		D86FAF531D17F379003432D8 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
@@ -88,17 +106,6 @@
 		D86FAF591D17F379003432D8 /* LaunchImage_Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage_Landscape@2x.png"; sourceTree = "<group>"; };
 		D86FAF5A1D17F379003432D8 /* LaunchImage_Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage_Portrait.png; sourceTree = "<group>"; };
 		D86FAF5B1D17F379003432D8 /* LaunchImage_Portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage_Portrait@2x.png"; sourceTree = "<group>"; };
-		D8C106C31E88F68300FDC4D7 /* libSuntengMobileAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuntengMobileAds.a; sourceTree = "<group>"; };
-		D8C106C41E88F68300FDC4D7 /* SMABannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMABannerView.h; sourceTree = "<group>"; };
-		D8C106C51E88F68300FDC4D7 /* SMAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAConstants.h; sourceTree = "<group>"; };
-		D8C106C61E88F68300FDC4D7 /* SMAInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAInterstitialAdController.h; sourceTree = "<group>"; };
-		D8C106C71E88F68300FDC4D7 /* SMAModalVideoAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAModalVideoAd.h; sourceTree = "<group>"; };
-		D8C106C81E88F68300FDC4D7 /* SMANativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMANativeAd.h; sourceTree = "<group>"; };
-		D8C106C91E88F68300FDC4D7 /* SMANativeAdImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMANativeAdImage.h; sourceTree = "<group>"; };
-		D8C106CA1E88F68300FDC4D7 /* SMANativeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMANativeAdView.h; sourceTree = "<group>"; };
-		D8C106CB1E88F68300FDC4D7 /* SMASplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMASplashAd.h; sourceTree = "<group>"; };
-		D8C106CC1E88F68300FDC4D7 /* SMAWindowVideoAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMAWindowVideoAd.h; sourceTree = "<group>"; };
-		D8C106CD1E88F68300FDC4D7 /* SuntengMobileAds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuntengMobileAds.h; sourceTree = "<group>"; };
 		D8C106CF1E88F6C400FDC4D7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D8C106D11E88F6DF00FDC4D7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -109,6 +116,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C59E8F711CCA1A2300E4F152 /* AdSupport.framework in Frameworks */,
+				573F5B361F0B9009001CB556 /* libSuntengMobileAds.a in Frameworks */,
 				D8C106D01E88F6C400FDC4D7 /* AVFoundation.framework in Frameworks */,
 				C59E8F771CCA1A3B00E4F152 /* CoreLocation.framework in Frameworks */,
 				C59E8F791CCA1A4100E4F152 /* CoreTelephony.framework in Frameworks */,
@@ -117,13 +125,33 @@
 				C59E8F7D1CCA1A4F00E4F152 /* SystemConfiguration.framework in Frameworks */,
 				C59E8F7F1CCA1A5500E4F152 /* UIKit.framework in Frameworks */,
 				330EC12D1E83B3E9007F4F8B /* libz.tbd in Frameworks */,
-				D8C106CE1E88F68300FDC4D7 /* libSuntengMobileAds.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		573F5B281F0B9009001CB556 /* SuntengMobileAds */ = {
+			isa = PBXGroup;
+			children = (
+				573F5B291F0B9009001CB556 /* libSuntengMobileAds.a */,
+				573F5B2A1F0B9009001CB556 /* SMABannerView.h */,
+				573F5B2B1F0B9009001CB556 /* SMAConstants.h */,
+				573F5B2C1F0B9009001CB556 /* SMAInterstitialAdController.h */,
+				573F5B2D1F0B9009001CB556 /* SMAModalVideoAd.h */,
+				573F5B2E1F0B9009001CB556 /* SMANativeAd.h */,
+				573F5B2F1F0B9009001CB556 /* SMANativeAdImage.h */,
+				573F5B301F0B9009001CB556 /* SMANativeAdView.h */,
+				573F5B311F0B9009001CB556 /* SMAPreMovieAd.h */,
+				573F5B321F0B9009001CB556 /* SMASplashAd.h */,
+				573F5B331F0B9009001CB556 /* SMAVideoNativeAd.h */,
+				573F5B341F0B9009001CB556 /* SMAWindowVideoAd.h */,
+				573F5B351F0B9009001CB556 /* SuntengMobileAds.h */,
+			);
+			name = SuntengMobileAds;
+			path = ../../SuntengMobileAds;
+			sourceTree = "<group>";
+		};
 		C59E8F471CCA165200E4F152 = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +172,7 @@
 		C59E8F521CCA165200E4F152 /* STMobSDKSample */ = {
 			isa = PBXGroup;
 			children = (
-				D8C106C21E88F68300FDC4D7 /* SuntengMobileAds */,
+				573F5B281F0B9009001CB556 /* SuntengMobileAds */,
 				D86FAF521D17F379003432D8 /* LaunchImages */,
 				C59E8F561CCA165200E4F152 /* AppDelegate.h */,
 				C59E8F571CCA165200E4F152 /* AppDelegate.m */,
@@ -167,6 +195,10 @@
 				330EC1321E83C6E0007F4F8B /* SMADemoWindowVideoViewController.m */,
 				D80246481EC5BFEE00679906 /* SMADemoPreMovieViewController.h */,
 				D80246491EC5BFEE00679906 /* SMADemoPreMovieViewController.m */,
+				573F5B371F0B9119001CB556 /* SMADemoVideoNativeAdViewController.h */,
+				573F5B381F0B9119001CB556 /* SMADemoVideoNativeAdViewController.m */,
+				573F5B3B1F0B93D0001CB556 /* SMAVideoNativeAdTableViewCell.h */,
+				573F5B3C1F0B93D0001CB556 /* SMAVideoNativeAdTableViewCell.m */,
 				C59E8F5C1CCA165300E4F152 /* Main.storyboard */,
 				C59E8F5F1CCA165300E4F152 /* Assets.xcassets */,
 				C59E8F641CCA165300E4F152 /* Info.plist */,
@@ -215,26 +247,6 @@
 				D86FAF5B1D17F379003432D8 /* LaunchImage_Portrait@2x.png */,
 			);
 			path = LaunchImages;
-			sourceTree = "<group>";
-		};
-		D8C106C21E88F68300FDC4D7 /* SuntengMobileAds */ = {
-			isa = PBXGroup;
-			children = (
-				D8C106C31E88F68300FDC4D7 /* libSuntengMobileAds.a */,
-				D8C106C41E88F68300FDC4D7 /* SMABannerView.h */,
-				D8C106C51E88F68300FDC4D7 /* SMAConstants.h */,
-				D8C106C61E88F68300FDC4D7 /* SMAInterstitialAdController.h */,
-				D8C106C71E88F68300FDC4D7 /* SMAModalVideoAd.h */,
-				D8C106C81E88F68300FDC4D7 /* SMANativeAd.h */,
-				D8C106C91E88F68300FDC4D7 /* SMANativeAdImage.h */,
-				D8C106CA1E88F68300FDC4D7 /* SMANativeAdView.h */,
-				D80246471EC5BF8F00679906 /* SMAPreMovieAd.h */,
-				D8C106CB1E88F68300FDC4D7 /* SMASplashAd.h */,
-				D8C106CC1E88F68300FDC4D7 /* SMAWindowVideoAd.h */,
-				D8C106CD1E88F68300FDC4D7 /* SuntengMobileAds.h */,
-			);
-			name = SuntengMobileAds;
-			path = ../../SuntengMobileAds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +337,8 @@
 				3366FC811D129E1D00AD792C /* SMADemoBannerAdViewController.m in Sources */,
 				33F434E11DE574F0005B8189 /* CustomNativeAdView.m in Sources */,
 				33F434E51DE58EA0005B8189 /* CustomNativeAdCell.m in Sources */,
+				573F5B3D1F0B93D0001CB556 /* SMAVideoNativeAdTableViewCell.m in Sources */,
+				573F5B391F0B9119001CB556 /* SMADemoVideoNativeAdViewController.m in Sources */,
 				330EC1331E83C6E0007F4F8B /* SMADemoWindowVideoViewController.m in Sources */,
 				C59E8F5B1CCA165300E4F152 /* SMADemoInterstitialAdViewController.m in Sources */,
 				33F434E81DE590D3005B8189 /* SMADemoNativeAdTableViewController.m in Sources */,

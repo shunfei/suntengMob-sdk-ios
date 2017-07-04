@@ -15,6 +15,7 @@
 #import "SMAWindowVideoAd.h"
 #import "SMANativeAd.h"
 #import "SMAPreMovieAd.h"
+#import "SMAVideoNativeAd.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -8,6 +8,11 @@
 
 ## Change Log
 
+07/04/2017 - v3.2.0
+
+* Add video native ad.
+* Bugs fixes.
+
 05/12/2017 - v3.1.0
 
 * Add in-stream video ad.

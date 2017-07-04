@@ -468,46 +468,237 @@ pre[class*="language-"] {
 
 <body>
 
-<h1 id="toc_0">舜飞移动广告 SDK iOS 版 v2.0.5 开发文档</h1>
+<ul class="toc">
+<li>
+<a href="#toc_0">舜飞移动广告 SDK iOS 版 v3.2.0 集成、使用文档</a>
+<ul>
+<li>
+<a href="#toc_1">1、开发环境、账号获取</a>
+</li>
+<li>
+<a href="#toc_2">2、SDK 集成</a>
+<ul>
+<li>
+<a href="#toc_3">2.1、添加 SDK 文件</a>
+</li>
+<li>
+<a href="#toc_4">2.2、添加所需的 Framework</a>
+</li>
+<li>
+<a href="#toc_5">2.3、设置编译选项</a>
+</li>
+<li>
+<a href="#toc_6">2.4、设置定位请求提示语</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_7">3、SDK 使用</a>
+<ul>
+<li>
+<a href="#toc_8">3.1、公共设置</a>
+</li>
+<li>
+<a href="#toc_9">3.2、横幅广告</a>
+<ul>
+<li>
+<a href="#toc_10">3.2.1、创建横幅广告</a>
+</li>
+<li>
+<a href="#toc_11">3.2.2、请求横幅广告</a>
+</li>
+<li>
+<a href="#toc_12">3.2.3、展示横幅广告</a>
+</li>
+<li>
+<a href="#toc_13">3.2.4、跟踪横幅广告生命周期</a>
+</li>
+<li>
+<a href="#toc_14">3.2.5、优化横幅广告获取、展示</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_15">3.3、插屏广告</a>
+<ul>
+<li>
+<a href="#toc_16">3.3.1、创建插屏广告</a>
+</li>
+<li>
+<a href="#toc_17">3.3.2、请求插屏广告</a>
+</li>
+<li>
+<a href="#toc_18">3.3.3、展示插屏广告</a>
+</li>
+<li>
+<a href="#toc_19">3.3.4、跟踪插屏广告生命周期</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_20">3.4、开屏广告</a>
+<ul>
+<li>
+<a href="#toc_21">3.4.1、初始化开屏广告、展示开屏广告</a>
+</li>
+<li>
+<a href="#toc_22">3.4.2、跟踪开屏广告生命周期</a>
+</li>
+<li>
+<a href="#toc_23">3.4.3、设置实时开屏广告请求超时时间</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_24">3.5、原生广告</a>
+<ul>
+<li>
+<a href="#toc_25">3.5.1、创建原生广告</a>
+</li>
+<li>
+<a href="#toc_26">3.5.2、请求原生广告</a>
+</li>
+<li>
+<a href="#toc_27">3.5.3、展示原生广告</a>
+</li>
+<li>
+<a href="#toc_28">3.5.4、跟踪原生广告生命周期</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_29">3.6、全屏视频广告</a>
+<ul>
+<li>
+<a href="#toc_30">3.6.1、创建全屏视频广告</a>
+</li>
+<li>
+<a href="#toc_31">3.6.2、请求全屏视频广告</a>
+</li>
+<li>
+<a href="#toc_32">3.6.3、展示全屏视频广告</a>
+</li>
+<li>
+<a href="#toc_33">3.6.4、跟踪全屏视频广告生命周期</a>
+</li>
+<li>
+<a href="#toc_34">3.6.5、全屏视频其它 API</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_35">3.7、窗口视频广告</a>
+<ul>
+<li>
+<a href="#toc_36">3.7.1、创建窗口视频广告</a>
+</li>
+<li>
+<a href="#toc_37">3.7.2、请求窗口视频广告</a>
+</li>
+<li>
+<a href="#toc_38">3.7.3、展示窗口视频广告</a>
+</li>
+<li>
+<a href="#toc_39">3.7.4、跟踪窗口视频广告生命周期</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_40">3.8、贴片视频广告</a>
+<ul>
+<li>
+<a href="#toc_41">3.8.1、创建贴片视频广告</a>
+</li>
+<li>
+<a href="#toc_42">3.8.2、请求贴片视频广告</a>
+</li>
+<li>
+<a href="#toc_43">3.8.3、展示贴片视频广告</a>
+</li>
+<li>
+<a href="#toc_44">3.8.4、跟踪贴片视频广告生命周期</a>
+</li>
+<li>
+<a href="#toc_45">3.8.5、贴片视频其它 API</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_46">3.9 视频信息流广告</a>
+<ul>
+<li>
+<a href="#toc_47">3.9.1、创建视频信息流广告</a>
+</li>
+<li>
+<a href="#toc_48">3.9.2、请求视频信息流广告</a>
+</li>
+<li>
+<a href="#toc_49">3.9.3、展示视频信息流广告</a>
+</li>
+<li>
+<a href="#toc_50">3.9.4、跟踪视频信息流广告生命周期</a>
+</li>
+<li>
+<a href="#toc_51">3.9.5、视频信息流广告其它 API</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-<h2 id="toc_1">1、开发环境</h2>
+
+<h1 id="toc_0">舜飞移动广告 SDK iOS 版 v3.2.0 集成、使用文档</h1>
+
+<h2 id="toc_1">1、开发环境、账号获取</h2>
 
 <ul>
 <li>Xcode 7.0 或更高版本</li>
 <li>支持 iOS 6.0.0 或更高版本</li>
 </ul>
 
-<p>关于 <strong>AdUnitID</strong>、<strong>AppSecret</strong>。请从 <a href="http://mbv.biddingx.com/main/">官网</a> 获取 AdUnitID、AppSecret。</p>
+<p>请从 <a href="http://mbv.biddingx.com/main/">官网</a> 注册并获取 <strong>AdUnitID</strong>、<strong>AppSecret</strong>。</p>
 
 <h2 id="toc_2">2、SDK 集成</h2>
 
-<h4 id="toc_3">2.1、将最新的 SDK 文件夹加入项目中，包含以下头文件和静态库文件：</h4>
+<h3 id="toc_3">2.1、添加 SDK 文件</h3>
 
-<div><pre><code class="language-objectivec">-📂 SuntengMobileAdsSDK
- |-📄 SuntengMobileAdsSDK.h
- |-📄 STMConstants.h
- |-📄 STMBannerView.h
- |-📄 STMInterstitialAdController.h
- |-📄 STMSplashAd.h
- |-📄 STMNativeAd.h
- |-📄 STMNativeAdView.h
- |-📄 STMNativeAdImage.h
- |-📃 libSuntengMobileAdsSDK.a</code></pre></div>
+<p><strong>将 SDK 文件夹加入项目中，包含以下头文件和静态库文件：</strong></p>
 
-<h4 id="toc_4">2.2、添加需要的 Framework：</h4>
+<div><pre><code class="language-objectivec">-📂 SuntengMobileAds
+ |-📄 SuntengMobileAds.h
+ |-📄 SMAConstants.h
+ |-📄 SMABannerView.h
+ |-📄 SMAInterstitialAdController.h
+ |-📄 SMASplashAd.h
+ |-📄 SMAModalVideoAd.h
+ |-📄 SMAWindowVideoAd.h
+ |-📄 SMANativeAd.h
+ |-📄 SMANativeAdView.h
+ |-📄 SMANativeAdImage.h
+ |-📄 SMAPreMovieAd.h
+ |-📄 SMAVideoNativeAd.h
+ |-📦 libSuntengMobileAds.a</code></pre></div>
+
+<h3 id="toc_4">2.2、添加所需的 Framework</h3>
 
 <div><pre><code class="language-objectivec">AdSupport.framework
-CoreGraphics.framework
+AVFoundation.framework
 CoreLocation.framework
 CoreTelephony.framework
 Foundation.framework
 StoreKit.framework
 SystemConfiguration.framework
-UIKit.framework</code></pre></div>
+UIKit.framework
+libz.tbd</code></pre></div>
 
-<h4 id="toc_5">2.3、设置对应 <strong>target</strong> 的编译选项，在『Build Settings』-&gt;『Linking』-&gt;『Other Linker Flags』，添加 <code>-ObjC</code> 参数。</h4>
+<h3 id="toc_5">2.3、设置编译选项</h3>
 
-<h4 id="toc_6">2.4、iOS 8.0+ 获取地理位置适配</h4>
+<p>设置对应 <strong>target</strong> 的编译选项，在『Build Settings』-&gt;『Linking』-&gt;『Other Linker Flags』，添加 <code>-ObjC</code> 参数。</p>
+
+<h3 id="toc_6">2.4、设置定位请求提示语</h3>
 
 <p>在 info.plist 里加入对应的定位请求字段，值填写获取定位请求提示框要显示的内容。</p>
 
@@ -520,48 +711,66 @@ UIKit.framework</code></pre></div>
 
 <h2 id="toc_7">3、SDK 使用</h2>
 
-<p>在使用 SDK 的代码中加入头文件。</p>
+<h3 id="toc_8">3.1、公共设置</h3>
 
-<div><pre><code class="language-objectivec">#import &quot;SuntengMobileAdsSDK.h&quot;</code></pre></div>
+<p><strong>在使用 SDK 的代码中加入头文件。</strong></p>
 
-<p>初始化 SDK</p>
+<div><pre><code class="language-objectivec">#import &quot;SuntengMobileAds.h&quot;</code></pre></div>
+
+<p><strong>初始化 SDK</strong></p>
 
 <div><pre><code class="language-objectivec">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[SuntengMobileAdsSDK sharedInstance] registerSDKWithAppSecret:@&quot;Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1&quot;];
+    [[SuntengMobileAds sharedSDK] registerSDKWithAppSecret:@&quot;Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1&quot;];
     return YES;
 }</code></pre></div>
 
-<h3 id="toc_8">3.1、横幅广告</h3>
+<p><strong>其它公共方法</strong></p>
 
-<h4 id="toc_9">3.1.1、创建横幅广告</h4>
+<div><pre><code class="language-objectivec">// 获取当前 SDK 版本
+- (NSString *)version;
 
-<div><pre><code class="language-objectivec">self.bannerView = [[STMBannerView alloc] initWithAdUnitID:@&quot;2-36-35&quot;
-                                                    frame:CGRectMake(0, 64, 320, 50)];
-[self.bannerView loadAd];</code></pre></div>
+// 关闭基于位置的广告投放
+- (void)disableLocationService;
 
-<h4 id="toc_10">3.1.2、展示横幅广告</h4>
+// 打开 log
+- (void)enableLoger;</code></pre></div>
+
+<h3 id="toc_9">3.2、横幅广告</h3>
+
+<h4 id="toc_10">3.2.1、创建横幅广告</h4>
+
+<div><pre><code class="language-objectivec">self.bannerView = [[SMABannerView alloc] initWithAdUnitID:@&quot;2-36-35&quot;
+                                                    frame:CGRectMake(0, 64, 320, 50)];</code></pre></div>
+
+<h4 id="toc_11">3.2.2、请求横幅广告</h4>
+
+<div><pre><code class="language-objectivec">[self.bannerView loadAd];</code></pre></div>
+
+<h4 id="toc_12">3.2.3、展示横幅广告</h4>
+
+<p>当您需要展示横幅广告时，请在尝试展示之前检查它是否已准备就绪。</p>
 
 <div><pre><code class="language-objectivec">if (self.bannerView.isLoaded) {
     [self.view addSubview:self.bannerView];
 }</code></pre></div>
 
-<h4 id="toc_11">3.1.3、跟踪横幅广告生命周期</h4>
+<h4 id="toc_13">3.2.4、跟踪横幅广告生命周期</h4>
 
-<p>您可以通过实现 <code>STMBannerViewDelegate</code> 中定义的协议，来跟踪广告生命周期中的各个阶段。所有方法定义如下：</p>
+<p>您可以通过实现 <code>SMABannerViewDelegate</code> 中定义的协议，来跟踪广告生命周期中的各个阶段。所有方法定义如下：</p>
 
 <div><pre><code class="language-objectivec">// 当横幅广告被成功加载后，回调该方法
-- (void)bannerViewDidLoadAd:(STMBannerView *)bannerView;
+- (void)bannerViewDidLoadAd:(SMABannerView *)bannerView;
 
 // 当横幅广告加载失败后，回调该方法
-- (void)bannerView:(STMBannerView *)bannerView didFailToLoadAdWithError:(NSError *)error;
+- (void)bannerView:(SMABannerView *)bannerView didFailToLoadAdWithError:(NSError *)error;
 
 // 当用户点击广告，回调该方法
-- (void)bannerViewDidTap:(STMBannerView *)bannerView;
+- (void)bannerViewDidTap:(SMABannerView *)bannerView;
 
 // 当横幅广告被关闭后，回调该方法
-- (void)bannerViewDidDismiss:(STMBannerView *)bannerView;</code></pre></div>
+- (void)bannerViewDidDismiss:(SMABannerView *)bannerView;</code></pre></div>
 
-<h4 id="toc_12">3.1.4、优化横幅广告获取、展示</h4>
+<h4 id="toc_14">3.2.5、优化横幅广告获取、展示</h4>
 
 <p>在横幅广告不在界面展示时，建议开发者使用以下两个方法暂停和恢复广告的自动刷新，减少在无展示时的刷新行为。</p>
 
@@ -571,13 +780,17 @@ UIKit.framework</code></pre></div>
 // 恢复 Banner 自动刷新
 - (void)startAutomaticallyRefreshingAd;</code></pre></div>
 
-<h3 id="toc_13">3.2、插屏广告</h3>
+<h3 id="toc_15">3.3、插屏广告</h3>
 
-<h4 id="toc_14">3.2.1、创建插屏广告</h4>
+<h4 id="toc_16">3.3.1、创建插屏广告</h4>
 
-<div><pre><code class="language-objectivec">self.interstitialAdController = [STMInterstitialAdController interstitialAdControllerWithAdUnitID:@&quot;2-36-36&quot;];</code></pre></div>
+<div><pre><code class="language-objectivec">self.interstitialAdController = [SMAInterstitialAdController interstitialAdControllerWithAdUnitID:@&quot;2-36-36&quot;];</code></pre></div>
 
-<h4 id="toc_15">3.2.2、展示插屏广告</h4>
+<h4 id="toc_17">3.3.2、请求插屏广告</h4>
+
+<div><pre><code class="language-objectivec">[self.interstitialAdController loadAd];</code></pre></div>
+
+<h4 id="toc_18">3.3.3、展示插屏广告</h4>
 
 <p>当您需要展示插屏广告时，请在尝试展示之前检查它是否已准备就绪。</p>
 
@@ -585,32 +798,32 @@ UIKit.framework</code></pre></div>
     [self.interstitialAdController presentFromViewController:self];
 } </code></pre></div>
 
-<h4 id="toc_16">3.2.3、跟踪插屏广告生命周期</h4>
+<h4 id="toc_19">3.3.4、跟踪插屏广告生命周期</h4>
 
-<p>您可以通过实现 <code>STMInterstitialAdControllerDelegate</code> 中定义的协议，来跟踪广告生命周期中的各个阶段。所有方法定义如下：</p>
+<p>您可以通过实现 <code>SMAInterstitialAdControllerDelegate</code> 中定义的协议，来跟踪广告生命周期中的各个阶段。所有方法定义如下：</p>
 
 <div><pre><code class="language-objectivec">// 当插屏广告被成功加载后，回调该方法
-- (void)interstitialDidLoad:(STMInterstitialAdController *)interstitial;
+- (void)interstitialDidLoad:(SMAInterstitialAdController *)interstitial;
 
 // 当插屏广告加载失败后，回调该方法
-- (void)interstitialDidLoadFail:(STMInterstitialAdController *)interstitial;
+- (void)interstitialDidLoadFail:(SMAInterstitialAdController *)interstitial;
 
 // 当插屏广告展示出来时，回调该方法
-- (void)interstitialDidPresent:(STMInterstitialAdController *)interstitial;
+- (void)interstitialDidPresent:(SMAInterstitialAdController *)interstitial;
 
 // 当用户点击广告，回调该方法
-- (void)interstitialDidTap:(STMInterstitialAdController *)interstitial;
+- (void)interstitialDidTap:(SMAInterstitialAdController *)interstitial;
 
 // 当插屏广告被关闭后，回调该方法
-- (void)interstitialDidDismiss:(STMInterstitialAdController *)interstitial;</code></pre></div>
+- (void)interstitialDidDismiss:(SMAInterstitialAdController *)interstitial;</code></pre></div>
 
-<h3 id="toc_17">3.3、开屏广告</h3>
+<h3 id="toc_20">3.4、开屏广告</h3>
 
-<h4 id="toc_18">3.3.1、初始化开屏广告、展示开屏广告</h4>
+<h4 id="toc_21">3.4.1、初始化开屏广告、展示开屏广告</h4>
 
 <div><pre><code class="language-objectivec">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 初始化 SDK
-    [[SuntengMobileAdsSDK sharedInstance] registerSDKWithAppSecret:@&quot;Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1&quot;];
+    [[SuntengMobileAds sharedSDK] registerSDKWithAppSecret:@&quot;Ac7Kd3lJ^KQX9Hjkn_Z(UO9jqViFh*q1&quot;];
     
     // 从 MainStoryboard 加载 rootViewController
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@&quot;Main&quot; bundle:nil];
@@ -622,7 +835,7 @@ UIKit.framework</code></pre></div>
     [self.window makeKeyAndVisible];
     
     // 初始化开屏广告
-    self.splashAd = [STMSplashAd splashAdWithAdUnitID:@&quot;2-36-34&quot;];
+    self.splashAd = [SMASplashAd splashAdWithAdUnitID:@&quot;2-36-34&quot;];
     
     self.splashAd.delegate = self;
     
@@ -633,63 +846,209 @@ UIKit.framework</code></pre></div>
     return YES;
 }</code></pre></div>
 
-<h4 id="toc_19">3.3.2、跟踪开屏广告生命周期</h4>
+<h4 id="toc_22">3.4.2、跟踪开屏广告生命周期</h4>
 
-<p>您可以通过实现 <code>STMSplashAdDelegate</code> 中定义的协议，来跟踪广告生命周期中的各个阶段。所有方法定义如下：</p>
+<p>您可以通过实现 <code>SMASplashAdDelegate</code> 中定义的协议，来跟踪广告生命周期中的各个阶段。所有方法定义如下：</p>
 
 <div><pre><code class="language-objectivec">// 当开屏广告被成功展示后，回调该方法
-- (void)splashDidPresent:(STMSplashAd *)splash;
+- (void)splashDidPresent:(SMASplashAd *)splash;
 
 // 当开屏广告展示失败后，回调该方法
-- (void)splashFailPresent:(STMSplashAd *)splash;
+- (void)splashFailPresent:(SMASplashAd *)splash;
 
 // 当用户点击广告，回调该方法
-- (void)splashDidTap:(STMSplashAd *)splash;
+- (void)splashDidTap:(SMASplashAd *)splash;
 
 // 当开屏广告被关闭后，回调该方法
-- (void)splashDidDismiss:(STMSplashAd *)splash;</code></pre></div>
+- (void)splashDidDismiss:(SMASplashAd *)splash;</code></pre></div>
 
-<h4 id="toc_20">3.3.3、设置实时开屏广告请求超时时间</h4>
+<h4 id="toc_23">3.4.3、设置实时开屏广告请求超时时间</h4>
 
 <p>开屏广告混合了缓存的开屏广告和实时获取功能。当本地没有缓存的开屏广告或者本地已缓存广告超时时， SDK 会发起实时开屏广告请求，实时开屏广告超时时间内默认设定为 2 秒，以提高用户体验。您可以通过以下方法自定义超时时间，以提高实时开屏广告展示的成功几率。</p>
 
 <div><pre><code class="language-objectivec">- (void)setRealtimeSplashTimeoutInterval:(CGFloat)interval;</code></pre></div>
 
-<h3 id="toc_21">3.4、原生广告</h3>
+<h3 id="toc_24">3.5、原生广告</h3>
 
-<h4 id="toc_22">3.4.1、创建原生广告</h4>
+<h4 id="toc_25">3.5.1、创建原生广告</h4>
 
-<div><pre><code class="language-objectivec">self.nativeAd = [[STMNativeAd alloc] initWithAdUnitID:@&quot;2-36-53&quot;];
-[self.nativeAd loadAd];</code></pre></div>
+<div><pre><code class="language-objectivec">self.nativeAd = [[SMANativeAd alloc] initWithAdUnitID:@&quot;2-36-53&quot;];</code></pre></div>
 
-<h4 id="toc_23">3.4.2、展示原生广告</h4>
+<h4 id="toc_26">3.5.2、请求原生广告</h4>
 
-<p>从 <code>STMNativeAdView</code> 子类化一个视图，并根据自己的样式需求使用 <code>STMNativeAd</code> 提供的元素：</p>
+<div><pre><code class="language-objectivec">[self.nativeAd loadAd];</code></pre></div>
 
-<div><pre><code class="language-objectivec">@property (nullable, nonatomic, strong, readonly) STMNativeAdImage *logo;
+<h4 id="toc_27">3.5.3、展示原生广告</h4>
+
+<p>从 <code>SMANativeAdView</code> 子类化一个视图，并根据自己的样式需求使用 <code>SMANativeAd</code> 提供的元素：</p>
+
+<div><pre><code class="language-objectivec">@property (nullable, nonatomic, strong, readonly) SMANativeAdImage *logo;
 @property (nullable, nonatomic, strong, readonly) NSString *title;
 @property (nullable, nonatomic, strong, readonly) NSString *detail;
-@property (nullable, nonatomic, strong, readonly) STMNativeAdImage *icon;
+@property (nullable, nonatomic, strong, readonly) SMANativeAdImage *icon;
 @property (nullable, nonatomic, strong, readonly) NSString *action;
-@property (nullable, nonatomic, strong, readonly) NSArray&lt;STMNativeAdImage *&gt; *images;</code></pre></div>
+@property (nullable, nonatomic, strong, readonly) NSArray&lt;SMANativeAdImage *&gt; *images;</code></pre></div>
 
 <p>添加到视图上，并布局好。</p>
 
-<p>添加展示视图前，先调用 <code>- (void)registerNativeAdView:(STMNativeAdView *)nativeAdView withViewController:(UIViewController *)viewController;</code> 方法将视图和广告绑定起来。</p>
+<p>添加展示视图前，先调用 <code>- (void)registerNativeAdView:(SMANativeAdView *)nativeAdView withViewController:(UIViewController *)viewController;</code> 方法将视图和广告绑定起来。</p>
 
-<h4 id="toc_24">3.4.3、跟踪原生广告生命周期</h4>
+<h4 id="toc_28">3.5.4、跟踪原生广告生命周期</h4>
 
 <div><pre><code class="language-objectivec">// 当原生广告被成功加载后，回调该方法
-- (void)nativeAdDidLoad:(STMNativeAd *)nativeAd;
+- (void)nativeAdDidLoad:(SMANativeAd *)nativeAd;
 
 // 当原生广告加载失败后，回调该方法
-- (void)nativeAd:(STMNativeAd *)nativeAd didLoadFailWithError:(NSError *)error;
+- (void)nativeAd:(SMANativeAd *)nativeAd didLoadFailWithError:(NSError *)error;
 
 // 当原生广告展示出来时，回调该方法
-- (void)nativeAdDidPresent:(STMNativeAd *)nativeAd;
+- (void)nativeAdDidPresent:(SMANativeAd *)nativeAd;
 
 // 当用户点击广告，回调该方法
-- (void)nativeAdDidTap:(STMNativeAd *)nativeAd;</code></pre></div>
+- (void)nativeAdDidTap:(SMANativeAd *)nativeAd;</code></pre></div>
+
+<h3 id="toc_29">3.6、全屏视频广告</h3>
+
+<h4 id="toc_30">3.6.1、创建全屏视频广告</h4>
+
+<div><pre><code class="language-objectivec">self.modalVideoAd = [[SMAModalVideoAd alloc] initWithAdUnitID:@&quot;2-36-41&quot;];</code></pre></div>
+
+<h4 id="toc_31">3.6.2、请求全屏视频广告</h4>
+
+<div><pre><code class="language-objectivec">[self.modalVideoAd loadAd];</code></pre></div>
+
+<h4 id="toc_32">3.6.3、展示全屏视频广告</h4>
+
+<p>当您需要展示全屏视频广告时，请在尝试展示之前检查它是否已准备就绪。</p>
+
+<div><pre><code class="language-objectivec">if (self.modalVideoAd.isReady) {
+    [self.modalVideoAd presentFromViewController:rootViewController];
+}</code></pre></div>
+
+<h4 id="toc_33">3.6.4、跟踪全屏视频广告生命周期</h4>
+
+<div><pre><code class="language-objectivec">- (void)modalVideoAdDidLoad:(SMAModalVideoAd *)modalVideoAd;
+
+- (void)modalVideoAd:(SMAModalVideoAd *)modalVideoAd didFailToLoadWithError:(NSError *)error;
+
+- (void)modalVideoAd:(SMAModalVideoAd *)modalVideoAd didFailToPlayWithError:(NSError *)error;
+
+- (void)modalVideoAdDidTap:(SMAModalVideoAd *)modalVideoAd;
+
+- (void)modalVideoAdDidPlayFinished:(SMAModalVideoAd *)modalVideoAd;
+
+- (void)modalVideoAdDidClose:(SMAModalVideoAd *)modalVideoAd;</code></pre></div>
+
+<h4 id="toc_34">3.6.5、全屏视频其它 API</h4>
+
+<div><pre><code class="language-objectivec">// 是否展示广告关闭按钮
+- (void)showCloseVideoButton:(BOOL)yesOrNo;
+
+// 自定义关闭提示语
+- (void)customizeAlertViewContents:(NSString *)contents;</code></pre></div>
+
+<h3 id="toc_35">3.7、窗口视频广告</h3>
+
+<h4 id="toc_36">3.7.1、创建窗口视频广告</h4>
+
+<div><pre><code class="language-objectivec">self.windowVideoAd = [[SMAWindowVideoAd alloc] initWithAdUnitID:@&quot;2-36-41&quot;];</code></pre></div>
+
+<h4 id="toc_37">3.7.2、请求窗口视频广告</h4>
+
+<div><pre><code class="language-objectivec">[self.windowVideoAd loadAd];</code></pre></div>
+
+<h4 id="toc_38">3.7.3、展示窗口视频广告</h4>
+
+<p>当您需要展示窗口视频广告时（<strong>请提前获取广告，并在广告资源下载成功后再展示</strong>），请在展示之前检查它是否已准备就绪。</p>
+
+<div><pre><code class="language-objectivec">if (self.windowVideoAd.isReady) {
+    [self.windowVideoAd disposeInView:containerView presentFromViewController:rootViewController];
+}</code></pre></div>
+
+<h4 id="toc_39">3.7.4、跟踪窗口视频广告生命周期</h4>
+
+<div><pre><code class="language-objectivec">- (void)windowVideoAdDidLoad:(SMAWindowVideoAd *)windowVideoAd;
+
+- (void)windowVideoAd:(SMAWindowVideoAd *)windowVideoAd didFailToLoadWithError:(NSError *)error;
+
+- (void)windowVideoAdDidTap:(SMAWindowVideoAd *)windowVideoAd;
+
+- (void)windowVideoAdDidPlayFinished:(SMAWindowVideoAd *)windowVideoAd;</code></pre></div>
+
+<h3 id="toc_40">3.8、贴片视频广告</h3>
+
+<h4 id="toc_41">3.8.1、创建贴片视频广告</h4>
+
+<div><pre><code class="language-objectivec">self.preMovieAd = [[SMAPreMovieAd alloc] initWithAdUnitID:@&quot;2-36-143&quot;];</code></pre></div>
+
+<h4 id="toc_42">3.8.2、请求贴片视频广告</h4>
+
+<div><pre><code class="language-objectivec">[self.preMovieAd loadAd];</code></pre></div>
+
+<h4 id="toc_43">3.8.3、展示贴片视频广告</h4>
+
+<p>当您需要展示贴片视频广告时（<strong>请提前获取广告，并在广告资源下载成功后再展示</strong>），请在展示之前检查它是否已准备就绪。</p>
+
+<div><pre><code class="language-objectivec">if (self.preMovieAd.isReady) {
+    [self.preMovieAd disposeInView:self.preMovieAdContainerView presentFromViewController:rootViewController];
+}</code></pre></div>
+
+<h4 id="toc_44">3.8.4、跟踪贴片视频广告生命周期</h4>
+
+<div><pre><code class="language-objectivec">- (void)preMovieAdDidLoad:(SMAPreMovieAd *)preMovieAd;
+
+- (void)preMovieAd:(SMAPreMovieAd *)preMovieAd didFailToLoadWithError:(NSError *)error;
+
+- (void)preMovieAdDidTap:(SMAPreMovieAd *)preMovieAd;
+
+- (void)preMovieAdDidPlayFinished:(SMAPreMovieAd *)preMovieAd;
+
+- (void)updatePreMovieAdPlayCurrentTime:(NSTimeInterval)time duration:(NSTimeInterval)duration;</code></pre></div>
+
+<h4 id="toc_45">3.8.5、贴片视频其它 API</h4>
+
+<div><pre><code class="language-objectivec">// 是否展示贴片广告进度倒计时
+@property(nonatomic, assign, getter=isTimeCounterHidden) BOOL timeCounterHidden;
+
+// 是否展示“查看详情”按钮
+@property(nonatomic, assign, getter=isCheckDetailButtonHidden) BOOL checkDetailButtonHidden;
+
+// 设置贴片广告支持的网络环境，默认支持 2G、3G、4G、Wi-Fi 网络环境下下载广告资源。
+@property (nonatomic, assign) SMASupportedNetworkOptions supportedNetwork;
+
+- (void)setMuteEnable:(BOOL)muteEnable;</code></pre></div>
+
+<h3 id="toc_46">3.9 视频信息流广告</h3>
+
+<h4 id="toc_47">3.9.1、创建视频信息流广告</h4>
+
+<div><pre><code class="language-objectivec">self.videoNativeAd = [[SMAVideoNativeAd alloc] initWithAdUnitID:@&quot;2-36-184&quot;];</code></pre></div>
+
+<h4 id="toc_48">3.9.2、请求视频信息流广告</h4>
+
+<div><pre><code class="language-objectivec">[self.videoNativeAd loadAd];</code></pre></div>
+
+<h4 id="toc_49">3.9.3、展示视频信息流广告</h4>
+
+<div><pre><code class="language-objectivec">[self.videoNativeAd unregisterView];
+[self.videoNativeAd setMediaView:mediaView];
+[self.videoNativeAd registerAdView:containerView withViewController:rootViewController];</code></pre></div>
+
+<h4 id="toc_50">3.9.4、跟踪视频信息流广告生命周期</h4>
+
+<div><pre><code class="language-objectivec">- (void)videoNativeAdDidLoad:(SMAVideoNativeAd *)nativeAd;
+
+- (void)videoNativeAd:(SMAVideoNativeAd *)nativeAd didLoadFailWithError:(NSError *)error;
+
+- (void)videoNativeAdDidImpression:(SMAVideoNativeAd *)nativeAd;
+
+- (void)videoNativeAdDidTap:(SMAVideoNativeAd *)nativeAd;</code></pre></div>
+
+<h4 id="toc_51">3.9.5、视频信息流广告其它 API</h4>
+
+<div><pre><code class="language-objectivec">@property (nonatomic, assign, getter=isMuted) BOOL muted;
+
+@property (nonatomic, assign, getter=isAutoplayEnabled) BOOL autoplayEnabled;</code></pre></div>
 
 
 
